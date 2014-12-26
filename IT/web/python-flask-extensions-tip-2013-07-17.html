@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<!-- Meta -->
+	<meta charset="utf-8" />
+
+	<!-- Mobile viewport optimized: h5bp.com/viewport -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+
+	<!-- Use the .htaccess and remove these lines to avoid edge case issues.
+	   More info: h5bp.com/i/378 -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+	<!-- Our site title and description -->
+	<title>Python Flask Extensions Tip | 월풍도원(月風道院) STATIC Version - Delight on the Simple Life</title>
+	<meta name="description" content="방랑자의 이야기 STATIC 버전.(STATIC version of stories about vagabond.)" />
+	<meta name="keywords" content="여행, 명상, 철학, 방랑, 행복, 인생, IT, vagabond, travel, trip, meditation, philosophy, happiness, life" />
+	<meta name="author" content="JOONGSEOB VITO KIM" />
+
+<meta property="og:title" content="Python Flask Extensions Tip | 월풍도원(月風道院) STATIC Version - Delight on the Simple Life">
+<meta property="og:description" content="방랑자의 이야기 STATIC 버전.(STATIC version of stories about vagabond.)">
+<meta property="og:type" content="article">
+<meta property="og:url" content="http://dorajistyle.net">
+<meta property="og:site_name" content="월풍도원(月風道院) STATIC Version - Delight on the Simple Life">
+<meta name="twitter:card" content="방랑자의 이야기 STATIC 버전.(STATIC version of stories about vagabond.)">
+<meta name="twitter:url" content="http://dorajistyle.net">
+<meta name="twitter:title" content="Python Flask Extensions Tip | 월풍도원(月風道院) STATIC Version - Delight on the Simple Life">
+<meta name="twitter:description" content="방랑자의 이야기 STATIC 버전.(STATIC version of stories about vagabond.)">
+<meta itemprop="name" content="Python Flask Extensions Tip | 월풍도원(月風道院) STATIC Version - Delight on the Simple Life">
+<meta itemprop="description" content="방랑자의 이야기 STATIC 버전.(STATIC version of stories about vagabond.)">
+
+	<!-- Output DocPad produced meta elements -->
+	<meta name="generator" content="DocPad v6.69.0" />
+
+	<!-- Icons -->
+    <link rel="shortcut icon" href="icons/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="icons/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="icons/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="icons/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="icons/apple-touch-icon-57-precomposed.png">
+
+	<!-- Shims: IE6-8 support of HTML5 elements -->
+	<!--[if lt IE 9]>
+		<script async src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+
+	<!-- Styles -->
+	<link  rel="stylesheet" href="http://yui.yahooapis.com/pure/0.3.0/pure-min.css" /><link  rel="stylesheet" href="http://code.ionicframework.com/ionicons/1.5.2/css/ionicons.min.css" /><link  rel="stylesheet" href="/styles/style.css" />
+	
+</head>
+<body>
+
+<!-- Markup -->
+<div class="pure-g-r" id="layout">
+	
+	<div class="sidebar pure-u">
+<header class="header">
+<hgroup>
+      <a href="/"><img class="logo" src="/images/logo.jpg" /></a>
+        <h3 class="brand-title">IT 이야기</h3>
+        <h4 class="brand-tagline">소프트웨어 개발과 IT전반에 걸친 이야기.</h4>
+</hgroup>
+		<nav id="nav-horizontal-menu" class="nav">
+
+			<ul id="std-menu-items" class="nav-list">
+	        		<li class="nav-item"><a href="/" class="pure-button"><i class="ion-ios7-home"></i></a></li>
+                                
+				
+					<li typeof="sioc:Page" about="/IT/3D.html" class="nav-item ">
+						<a class="pure-button" href="/IT/3D.html" property="dc:title">3D</a>
+					</li>
+				
+					<li typeof="sioc:Page" about="/IT/index.html" class="nav-item ">
+						<a class="pure-button" href="/IT/index.html" property="dc:title">IT</a>
+					</li>
+				
+					<li typeof="sioc:Page" about="/IT/OS.html" class="nav-item ">
+						<a class="pure-button" href="/IT/OS.html" property="dc:title">OS</a>
+					</li>
+				
+					<li typeof="sioc:Page" about="/IT/app.html" class="nav-item ">
+						<a class="pure-button" href="/IT/app.html" property="dc:title">app</a>
+					</li>
+				
+					<li typeof="sioc:Page" about="/IT/blog.html" class="nav-item ">
+						<a class="pure-button" href="/IT/blog.html" property="dc:title">blog</a>
+					</li>
+				
+					<li typeof="sioc:Page" about="/IT/db.html" class="nav-item ">
+						<a class="pure-button" href="/IT/db.html" property="dc:title">db</a>
+					</li>
+				
+					<li typeof="sioc:Page" about="/IT/development.html" class="nav-item ">
+						<a class="pure-button" href="/IT/development.html" property="dc:title">development</a>
+					</li>
+				
+					<li typeof="sioc:Page" about="/IT/etc.html" class="nav-item ">
+						<a class="pure-button" href="/IT/etc.html" property="dc:title">etc</a>
+					</li>
+				
+					<li typeof="sioc:Page" about="/IT/mobile.html" class="nav-item ">
+						<a class="pure-button" href="/IT/mobile.html" property="dc:title">mobile</a>
+					</li>
+				
+					<li typeof="sioc:Page" about="/IT/sccm.html" class="nav-item ">
+						<a class="pure-button" href="/IT/sccm.html" property="dc:title">sccm</a>
+					</li>
+				
+					<li typeof="sioc:Page" about="/IT/testing.html" class="nav-item ">
+						<a class="pure-button" href="/IT/testing.html" property="dc:title">testing</a>
+					</li>
+				
+					<li typeof="sioc:Page" about="/IT/tip.html" class="nav-item ">
+						<a class="pure-button" href="/IT/tip.html" property="dc:title">tip</a>
+					</li>
+				
+					<li typeof="sioc:Page" about="/IT/web.html" class="nav-item ">
+						<a class="pure-button" href="/IT/web.html" property="dc:title">web</a>
+					</li>
+				
+					<li typeof="sioc:Page" about="/IT/이론.html" class="nav-item ">
+						<a class="pure-button" href="/IT/이론.html" property="dc:title">이론</a>
+					</li>
+				
+					<li typeof="sioc:Page" about="/IT/환경.html" class="nav-item ">
+						<a class="pure-button" href="/IT/환경.html" property="dc:title">환경</a>
+					</li>
+				
+                           
+			</ul>
+		</nav>
+                </header>
+</div>
+
+
+
+<div class="pure-u-1">
+    <div class="content">
+    <div class="posts">
+<article id="post" class="post">
+    <header class="post-header">
+    
+    <h1 class="post-title">Python Flask Extensions Tip</h1>
+    
+    </header>
+    <div class="post-content">
+        <div align="center">
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- static_blog_top -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:336px;height:280px"
+     data-ad-client="ca-pub-4159714136965100"
+     data-ad-slot="8471411541"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+ 
+        <p>
+        <h2 id="article_summary" class="summary">파이썬 Flask 플러그인 안내와 팁.</h2><p><strong>데이터베이스</strong><br /><a title="Flask-SQLAlchemy" href="http://pythonhosted.org/Flask-SQLAlchemy/" target="_blank">Flask-SQLAlchemy</a> : OR매핑을 지원하는 플라스크용 파이썬 SQL toolkit<br />SQLAlchemy에서 상속(Inheritance) : <a title="sqlalchemy 상속" href="http://docs.sqlalchemy.org/en/rel_0_7/orm/inheritance.html" target="_blank">http://docs.sqlalchemy.org/en/rel_0_7/orm/inheritance.html</a></p><p>SQLAlchemy 컬럼에 데이터가 생성될때나 업데이트 될때 현재 시각을 자동으로 넣는 방법.<br />updated_at = db.Column(db.DateTime, default=db.func.now(), onupdate=db.func.now())</p><p><strong>로그인&middot;보안</strong><br /><a title="Flask-Social" href="http://pythonhosted.org/Flask-Social/" target="_blank">Flask-Social</a> : 소셜 네트워크와의 연결을 간편하게 해 줌.<br /><a title="Flask-Security" href="http://pythonhosted.org/Flask-Security" target="_blank">Flask Security(Auth)</a> : 로그인과 권한관리.</p><p><strong>관리자 페이지</strong><br /><a title="Flask-Admin" href="https://pypi.python.org/pypi/Flask-Admin" target="_blank">Flask-Admin</a> : 관리자 페이지를 손쉽게 만들도록 도와줌.</p><p><strong>다국어 지원</strong><br /><a title="Flask-Babel" href="https://pypi.python.org/pypi/Flask-Babel" target="_blank">Flask-Babel</a> : 파이썬용 다국어 지원 Babel의 Flask 플러그인</p><p><strong>캐쉬</strong><br /><a title="flask-cache" href="https://github.com/thadeusb/flask-cache" target="_blank">flask-cache</a> : 캐쉬 설정을 도와줌.</p><p><strong>에셋 관리</strong><br /><a title="flask-assets" href="http://elsdoerfer.name/docs/flask-assets" target="_blank">flask-assets</a> : 각종 static 에셋 관리를 편하게 도와줌.<br />사용하고자 하는 기능에 따라 추가 모듈이 필요하다. (css 압축, scss사용)<br />pip install cssmin<br />pip install pyscss<br /><strong>Flask-Assets extension에서 pyScss컴파일러 사용 설정법</strong><br /><code><br />from flask import Flask, render_template<br />from flask.ext.assets import Environment, Bundle<br /><br />app = Flask(__name__)<br /><br />assets = Environment(app)<br />assets.url = app.static_url_path<br />scss = Bundle('foo.scss', 'bar.scss', filters='pyscss', output='all.css')<br />assets.register('scss_all', scss)<br />And in the template include this:<br /><br />{% assets "scss_all" %}<br />{% endassets %}<br /></code><br />SCSS file은 debug모드에서도 컴파일 된다.<br /><p><strong>캐쉬</strong><br /><a title="Flask-Cache" href="http://pythonhosted.org/Flask-Cache/" target="_blank">Flask-Cache</a> : 플라스크에서 캐쉬 사용 하기 쉽게 도와줌.<br /><code># Flask-Cache Cache Type<br />CACHE_TYPE = 'simple' # 개발 시<br />CACHE_TYPE = 'redis' # 배포 시. redis 서버 구동 필요.<br />from flask.ext.cache import Cache<br /><br />app = Flask(__name__)<br />cache = Cache()<br />cache.init_app(app, config={'CACHE_TYPE': CACHE_TYPE})<br /></code><br /></p><p><strong>파일 업로드</strong><br /><a title="Flask-Uploads" href="http://pythonhosted.org/Flask-Uploads" target="_blank">Flask-Uploads</a> : 파일 업로드 관련 처리를 도와줌.<br /><code>from flask.ext.uploads import UploadSet<br />images = UploadSet()<br />images.__init__('upload', IMAGES)<br />filename = images.save(files, folder='/images', name='test.')<br />image_path = images.path(filename)<br />url = images.url(thumbnail)<br /></code></p><p><strong>텍스트 검색</strong><br /><a title="Flask-WhooshAlchemy" href="https://github.com/gyllstromk/Flask-WhooshAlchemy" target="_blank">Flask-WhooshAlchemy</a> : 텍스트 기반 검색을 쉽게 도와줌</p><p><strong>오류 추적</strong><br /><a title="flask-exceptional" href="https://github.com/jzempel/flask-exceptional" target="_blank">flask-exceptional</a> : 오류 추적 서비스인 <a title="exceptional" href="http://www.exceptional.io/" target="_blank">exceptional</a>를 flask에서 이용 가능하게 도와줌.</p><p><strong>전자상거래(e-commerce)</strong> [flask용 extension 아님]<br /><a title="stripe" href="https://stripe.com" target="_blank">stripe</a> : 결제 모듈을 간편하게 시스템에 붙이도록 도와주는 서비스.<br /><a title="satchmoproject" href="http://www.satchmoproject.com" target="_blank">satchmoproject</a> : 오픈소스 전자 상점 프레임워크 (<a title="satchmo wiki" href="https://bitbucket.org/chris1610/satchmo/wiki/Home" target="_blank">satchmo Wiki</a>)<br /><a title="satchless" href="http://satchless.com" target="_blank">satchless</a> : 프레임워크에 종속적이지 않은 e-commerce용 클래스와 패턴 모음<br /><a title="flamaster" href="https://github.com/MediaSapiens/flamaster" target="_blank">flamaster</a> : flask용 e-commerce eventing 시스템</p><p><strong>Flask에서 JSON 다루기(JSON Handling in Flask)</strong><br /><a title="module-flask" href="http://flask.pocoo.org/docs/api/#module-flask.json" target="_blank">http://flask.pocoo.org/docs/api/#module-flask.json</a><br /><code><br />import requests<br />r = requests.get(QUERY_URL)<br />return r.json<br />//normal return<br />return jsonify(username=g.user.username,<br />email=g.user.email,id=g.user.id)<br /></code></p><p><strong>jsonify a SQLAlchemy result set in Flask</strong><br /><a title="jsonify-a-sqlalchemy-result-set-in-flask" href="http://stackoverflow.com/questions/7102754/jsonify-a-sqlalchemy-result-set-in-flask" target="_blank">http://stackoverflow.com/questions/7102754/jsonify-a-sqlalchemy-result-set-in-flask</a><br />jsonify의 문제는 object가 자동으로 json화 되지 않는다는 것이다.<br />serialize를 위해 다음을 모델에 추가 해 준다.</p><p><code><br />def dump_datetime(value):<br />"""Deserialize datetime object into string form for JSON processing."""<br />if value is None:<br />return None<br />return [value.strftime("%Y-%m-%d"), value.strftime("%H:%M:%S")]<br /><br />class Foo(db.Model):<br />//... SQLAlchemy defs here..<br />def __init__(self, ...):<br />//self.foo = ...<br />pass<br />@property<br />def serialize(self):<br />"""Return object data in easily serializeable format"""<br />return {<br />'id'         : self.id,<br />'modified_at': dump_datetime(self.modified_at),<br /># This is an example how to deal with Many2Many relations<br />'many2many'  : self.serialize_many2many<br />}<br />@property<br />def serialize_many2many(self):<br />"""<br />Return object's relations in easily serializeable format.<br />NB! Calls many2many's serialize property.<br />"""<br />return [ item.serialize for item in self.many2many]<br /></code><br />뷰에서는 아래처럼 사용한다.<br /><code><br />return jsonify(json_list=[i.serialize for i in qryresult.all()])<br /></code></p><p><strong>gunicorn서버 사용 설정.</strong><br /><code><br />from werkzeug.contrib.fixers import ProxyFix<br />app.wsgi_app = ProxyFix(app.wsgi_app)<br /><br />if __name__ == '__main__':<br />port = int(os.environ.get('PORT', 5000))<br />app.run()<br /></code></p><p><strong>Blueprint</strong><br />routing관리에 이용한다.<br />application/feedback 폴더에 모듈을 넣을 경우.<br /><code><br />from flask import Blueprint<br />mod = Blueprint('root', __name__, url_prefix='') // prefix를 공란으로 두면 root를 의미한다.<br />mod = Blueprint('feedback', __name__, url_prefix='/feedbacks')  // prefix를 채우면 route('/')가 해당 prefix와 같다.<br />@mod.route('/')<br /></code><br />새로운 디렉토리를 만들고 __init__.py파일을 추가해야 import시 인식한다.</p><p>모듈을 사용하려면 어플리케이션에서 등록해 준다.<br /><code><br />from application.feedback.views import mod as feedbacksModule<br />app.register_blueprint(feedbacksModule)<br /></code></p><p><strong>파일 여러개 올리기(Uploading multiple files with Flask)</strong><br /><a title="flask 에서 파일 여러개 올리기" href="http://stackoverflow.com/questions/11817182/uploading-multiple-files-with-flask" target="_blank">http://stackoverflow.com/questions/11817182/uploading-multiple-files-with-flask</a></p><p><code><br />@app.route("/upload", methods=["POST"])<br />def upload():<br />uploadedfiles = flask.request.files.getlist("file[]")<br />print uploadedfiles<br />return ""<br /></code></p><p><strong>동적으로 생성된 이미지 파일의 url 받기(How to get url for dynamically generated image file?)</strong><br /><a title="동적으로 생성된 이미지 파일의 url 받기(How to get url for dynamically generated image file?)" href="http://stackoverflow.com/questions/12034949/flask-how-to-get-url-for-dynamically-generated-image-file" target="_blank">http://stackoverflow.com/questions/12034949/flask-how-to-get-url-for-dynamically-generated-image-file</a><br /><code><br />@app.route("/imgs/")<br />def images(path):<br />generateimg(path)<br />fullpath = "./imgs/" + path<br />resp = flask.makeresponse(open(fullpath).read())<br />resp.content_type = "image/jpeg"<br />return resp<br /></code></p><p>mydomain.com/static/test.jpg<br /><code><br />from flask import Flask, redirect, url_for<br /><br />app = Flask(__name__)<br />@app.route('/')<br />def index():<br />generate_img("test.jpg"); #save inside static folder<br />return '&lt;img src=' + url_for('static',filename='test.jpg') + '&gt;'<br /></code></p><p><strong>Jade</strong><br />두개의 속성을 지정할 땐 콤마(,)를 잊지 않는다.<br /><code><br />script(data-main='js/app', src='js/vendor/require.js')<br /></code></p>
+        </p>
+        <div align="center">
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- static bottom -->
+<ins class="adsbygoogle"
+style="display:inline-block;width:728px;height:90px"
+data-ad-client="ca-pub-4159714136965100"
+data-ad-slot="5066849540"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+ 
+    </div>
+    
+</article>
+        </div>
+    <div id="disqus_thread"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript></div>
+<script type="text/javascript">
+    var disqus_shortname = 'dorajistyle-static';
+    var disqus_url = 'http://dorajistyle.net/IT/web/python-flask-extensions-tip-2013-07-17.html';
+    var disqus_identifier = disqus_url;
+    var disqus_title = 'Python Flask Extensions Tip';
+
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+
+    <div id="me">
+    <p>
+        <img src="http://www.gravatar.com/avatar/8791361c5e3bb3cfa949de550d87e27b?s=100" alt="JoongSeob Vito Kim" />
+      한 줄의 코드와 몇 개의 단어로 디지털과 아날로그를 오가는 여행자.<br/> 
+게으름뱅이를 위한 세상을 만드는 것이 삶의 목표이다.<br/>A vagabond who travels between digital and analog with a line of code and a few words.<br/> The goal of life is creating the milieu of lazybones.</p>
+    <p>
+       &#8226; <a href="https://github.com/dorajistyle" target="_blank" title="dorajistyle's GitHub"><i class="ion-social-github"></i>GitHub</a> &#8226; 
+        <a href="#sendEmailForm" onClick="showEmailForm();"><i class="ion-email"></i>Email Me</a>
+    </p>
+</div>
+<div class="ss-form"><form class="pure-form pure-form-stacked" onsubmit="return validateForm();" target="_private_message" action="" method="POST" id="sendEmailForm" hidden>
+<fieldset>
+<div class="pure-control-group"><div class="errorbox-good">
+<div class="ss-item ss-item-required ss-text"><div class="ss-form-entry"><label for="entry_0" class="ss-q-title">보내는 분 성함 <span class="red">*</span></label><input name="entry.270478495" value="" class="ss-q-short pure-input-1-2" id="entry_270478495" type="text" placeholder="Name" aria-required="true" required=""></div></div></div></div>
+<br>
+<div class="pure-control-group"><div class="errorbox-good">
+<div class="ss-item ss-item-required ss-text"><div class="ss-form-entry"> <label class="ss-q-title" for="entry_1">이메일 주소 <span class="red">*</span></label><input name="entry.2021847284" value="" class="ss-q-short pure-input-1-2" id="entry_2021847284" aria-required="true" required="" pattern=".*^[a-zA-Z0-9.!#$%&amp;amp;&#39;*+\-\/=?\^_`{|}~\-]+@[a-zA-Z0-9\-]+(?:\.[a-zA-Z0-9\-]+)*$.*" type="text" placeholder="email@address"></div></div></div></div><br>
+<div class="pure-control-group"><div class="errorbox-good">
+<div class="ss-item ss-item-required ss-paragraph-text"><div class="ss-form-entry"><label class="ss-q-title" for="entry_2">전하실 말씀 <span class="red">*</span></label><textarea name="entry.2125433964" rows="8" cols="75" class="pure-input-1-2 ss-q-long" id="entry_2125433964" placeholder="Have a nice day!!" aria-required="true" required=""></textarea></div></div></div></div><br>
+<div class="pure-controls"><div class="errorbox-good">
+<div class="ss-item"><div class="ss-form-entry"><label for="group_1798525724_1" class="ss-q-title pure-checkbox"><input type="checkbox" name="entry.1798525724" value="&#45348; (Yes)" id="group_1798525724_1" aria-required="true" role="checkbox"> 이메일을 보내시겠습니까?(Are you sure to send an email?)</label>
+</div></div></div></div>
+<br/>
+<div class="pure-controls">
+<input type="hidden" name="draftResponse" value="[,,&quot;7697741025179685837&quot;]
+">
+<input type="hidden" name="pageHistory" value="0">
+<input type="hidden" name="fbzx" value="7697741025179685837">
+<div class="ss-item ss-navigate"><div class="ss-form-entry" hidden>
+<input type="submit" name="submit" id="ss-submit" class="pure-button pure-button-primary" value="메일 보내기"> 
+</div>
+<a class="pure-button submit" href="#" onclick="submitForm();">
+    <i class="ion-paper-airplane"></i>
+    메일 보내기
+</a>
+</div></div></fieldset></form></div>
+ 
+
+    </div>
+
+<footer>
+		
+	</footer>
+
+	
+
+</div>
+
+
+	<div class="pure-u-1">
+        <footer class="footer">
+			&copy;  2014 JoongSeob Vito Kim
+        </footer>
+	</div>
+</div>
+
+	<!-- Scripts -->
+	<script defer="defer"  src="/scripts/main.js"></script>
+</body>
+</html>

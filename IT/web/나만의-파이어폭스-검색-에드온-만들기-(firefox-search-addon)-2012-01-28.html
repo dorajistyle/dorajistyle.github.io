@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<!-- Meta -->
+	<meta charset="utf-8" />
+
+	<!-- Mobile viewport optimized: h5bp.com/viewport -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+
+	<!-- Use the .htaccess and remove these lines to avoid edge case issues.
+	   More info: h5bp.com/i/378 -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+	<!-- Our site title and description -->
+	<title>나만의 파이어폭스 검색 에드온 만들기 (Firefox search addon) | 월풍도원(月風道院) STATIC Version - Delight on the Simple Life</title>
+	<meta name="description" content="방랑자의 이야기 STATIC 버전.(STATIC version of stories about vagabond.)" />
+	<meta name="keywords" content="여행, 명상, 철학, 방랑, 행복, 인생, IT, vagabond, travel, trip, meditation, philosophy, happiness, life" />
+	<meta name="author" content="JOONGSEOB VITO KIM" />
+
+<meta property="og:title" content="나만의 파이어폭스 검색 에드온 만들기 (Firefox search addon) | 월풍도원(月風道院) STATIC Version - Delight on the Simple Life">
+<meta property="og:description" content="방랑자의 이야기 STATIC 버전.(STATIC version of stories about vagabond.)">
+<meta property="og:type" content="article">
+<meta property="og:url" content="http://dorajistyle.net">
+<meta property="og:site_name" content="월풍도원(月風道院) STATIC Version - Delight on the Simple Life">
+<meta name="twitter:card" content="방랑자의 이야기 STATIC 버전.(STATIC version of stories about vagabond.)">
+<meta name="twitter:url" content="http://dorajistyle.net">
+<meta name="twitter:title" content="나만의 파이어폭스 검색 에드온 만들기 (Firefox search addon) | 월풍도원(月風道院) STATIC Version - Delight on the Simple Life">
+<meta name="twitter:description" content="방랑자의 이야기 STATIC 버전.(STATIC version of stories about vagabond.)">
+<meta itemprop="name" content="나만의 파이어폭스 검색 에드온 만들기 (Firefox search addon) | 월풍도원(月風道院) STATIC Version - Delight on the Simple Life">
+<meta itemprop="description" content="방랑자의 이야기 STATIC 버전.(STATIC version of stories about vagabond.)">
+
+	<!-- Output DocPad produced meta elements -->
+	<meta name="generator" content="DocPad v6.69.0" />
+
+	<!-- Icons -->
+    <link rel="shortcut icon" href="icons/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="icons/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="icons/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="icons/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="icons/apple-touch-icon-57-precomposed.png">
+
+	<!-- Shims: IE6-8 support of HTML5 elements -->
+	<!--[if lt IE 9]>
+		<script async src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+
+	<!-- Styles -->
+	<link  rel="stylesheet" href="http://yui.yahooapis.com/pure/0.3.0/pure-min.css" /><link  rel="stylesheet" href="http://code.ionicframework.com/ionicons/1.5.2/css/ionicons.min.css" /><link  rel="stylesheet" href="/styles/style.css" />
+	
+</head>
+<body>
+
+<!-- Markup -->
+<div class="pure-g-r" id="layout">
+	
+	<div class="sidebar pure-u">
+<header class="header">
+<hgroup>
+      <a href="/"><img class="logo" src="/images/logo.jpg" /></a>
+        <h3 class="brand-title">IT 이야기</h3>
+        <h4 class="brand-tagline">소프트웨어 개발과 IT전반에 걸친 이야기.</h4>
+</hgroup>
+		<nav id="nav-horizontal-menu" class="nav">
+
+			<ul id="std-menu-items" class="nav-list">
+	        		<li class="nav-item"><a href="/" class="pure-button"><i class="ion-ios7-home"></i></a></li>
+                                
+				
+					<li typeof="sioc:Page" about="/IT/3D.html" class="nav-item ">
+						<a class="pure-button" href="/IT/3D.html" property="dc:title">3D</a>
+					</li>
+				
+					<li typeof="sioc:Page" about="/IT/index.html" class="nav-item ">
+						<a class="pure-button" href="/IT/index.html" property="dc:title">IT</a>
+					</li>
+				
+					<li typeof="sioc:Page" about="/IT/OS.html" class="nav-item ">
+						<a class="pure-button" href="/IT/OS.html" property="dc:title">OS</a>
+					</li>
+				
+					<li typeof="sioc:Page" about="/IT/app.html" class="nav-item ">
+						<a class="pure-button" href="/IT/app.html" property="dc:title">app</a>
+					</li>
+				
+					<li typeof="sioc:Page" about="/IT/blog.html" class="nav-item ">
+						<a class="pure-button" href="/IT/blog.html" property="dc:title">blog</a>
+					</li>
+				
+					<li typeof="sioc:Page" about="/IT/db.html" class="nav-item ">
+						<a class="pure-button" href="/IT/db.html" property="dc:title">db</a>
+					</li>
+				
+					<li typeof="sioc:Page" about="/IT/development.html" class="nav-item ">
+						<a class="pure-button" href="/IT/development.html" property="dc:title">development</a>
+					</li>
+				
+					<li typeof="sioc:Page" about="/IT/etc.html" class="nav-item ">
+						<a class="pure-button" href="/IT/etc.html" property="dc:title">etc</a>
+					</li>
+				
+					<li typeof="sioc:Page" about="/IT/mobile.html" class="nav-item ">
+						<a class="pure-button" href="/IT/mobile.html" property="dc:title">mobile</a>
+					</li>
+				
+					<li typeof="sioc:Page" about="/IT/sccm.html" class="nav-item ">
+						<a class="pure-button" href="/IT/sccm.html" property="dc:title">sccm</a>
+					</li>
+				
+					<li typeof="sioc:Page" about="/IT/testing.html" class="nav-item ">
+						<a class="pure-button" href="/IT/testing.html" property="dc:title">testing</a>
+					</li>
+				
+					<li typeof="sioc:Page" about="/IT/tip.html" class="nav-item ">
+						<a class="pure-button" href="/IT/tip.html" property="dc:title">tip</a>
+					</li>
+				
+					<li typeof="sioc:Page" about="/IT/web.html" class="nav-item ">
+						<a class="pure-button" href="/IT/web.html" property="dc:title">web</a>
+					</li>
+				
+					<li typeof="sioc:Page" about="/IT/이론.html" class="nav-item ">
+						<a class="pure-button" href="/IT/이론.html" property="dc:title">이론</a>
+					</li>
+				
+					<li typeof="sioc:Page" about="/IT/환경.html" class="nav-item ">
+						<a class="pure-button" href="/IT/환경.html" property="dc:title">환경</a>
+					</li>
+				
+                           
+			</ul>
+		</nav>
+                </header>
+</div>
+
+
+
+<div class="pure-u-1">
+    <div class="content">
+    <div class="posts">
+<article id="post" class="post">
+    <header class="post-header">
+    
+    <h1 class="post-title">나만의 파이어폭스 검색 에드온 만들기 (Firefox search addon)</h1>
+    
+    </header>
+    <div class="post-content">
+        <div align="center">
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- static_blog_top -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:336px;height:280px"
+     data-ad-client="ca-pub-4159714136965100"
+     data-ad-slot="8471411541"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+ 
+        <p>
+        <h2 id="article_summary" class="summary">특정 조건으로 검색을 자주 한다면, 자신만의 파이어폭스 검색 에드온을 만들어 보세요.</h2><p>자주 쓰는 검색 조건이 있으신가요?</p><p style="margin: 0px; text-indent: 0px;">만약 특별히 자주 쓰는 검색 조건이 있다면,</p><p style="margin: 0px; text-indent: 0px;">기본 검색 에드온으로 검색한 다음에, 일일히 조건을 지정하시기는 참 귀찮은 일입니다.</p><p style="margin: 0px; text-indent: 0px;">자신만의 파이어폭스 검색 애드온을 만들면, 이런 수고를 덜어줘요.</p><p style="margin: 0px; text-indent: 0px;">&nbsp;</p><h3 style="margin: 0px; text-indent: 0px;">파이어폭스용 검색 에드온 만들기</h3><p style="margin: 0px; text-indent: 0px;">아래의 양식으로 문서를 만든 후 <span style="color: #0000ff;"><strong>search-engine-name.xml</strong></span> 포멧으로 저장하세요.</p><p style="margin: 0px; text-indent: 0px;"><strong><span style="color: #0000ff;">firefox/Data/profile/searchplugins</span></strong> 폴더 혹은  <span style="color: #0000ff;"><strong>Firefox/searchplugins</strong></span> 폴더에 파일을 복사해 넣으세요.</p><p style="margin: 0px; text-indent: 0px;">&nbsp;</p><h3 style="margin: 0px; text-indent: 0px;">파이어폭스용 검색 에드온 양식</h3><p style="margin: 0px; text-indent: 0px;">&nbsp;</p><p><code>&lt;SearchPlugin xmlns="http://www.mozilla.org/2006/browser/search/" xmlns:os="http://a9.com/-/spec/opensearch/1.1/"&gt;&lt;&lt;os:ShortName&gt;검색 엔진 이름&lt;/os:ShortName&gt;<br />&lt;os:Description&gt;검색엔진 설명&lt;/os:Description&gt;<br />&lt;os:InputEncoding&gt;UTF-8&lt;/os:InputEncoding&gt;<br />&lt;os:Image width="16" height="16"&gt;이미지의 base64코드&lt;/SearchForm&gt;<br />&lt;os:Url type="text/html" method="GET" template="검색엔진주소[query={searchTerms}]"&gt;<br />&lt;/os:Url&gt;<br />&lt;/SearchPlugin&gt;</code></p><p style="margin: 0px; text-indent: 0px;">&nbsp;</p><p style="margin: 0px; text-indent: 0px;">아마 사람마다 즐겨 검색 하는 조건이 다를 거에요.</p><p style="margin: 0px; text-indent: 0px;">예를 들자면 저는 구글에서 최근 1년사이의 정보를 찾는 횟수가 잦습니다.</p><p style="margin: 0px; text-indent: 0px;">그리고 페이지 넘기는게 귀찮으니 한번에 50개 정도 검색 결과가 나오면 좋겠군요.</p><p style="margin: 0px; text-indent: 0px;">그리고 검색된 링크를 새 창으로 띄우면 더 편하겠어요.</p><p style="margin: 0px; text-indent: 0px;">이 조건을 적용하면 아래와 같은 검색 주소가 나옵니다.</p><p style="margin: 0px; text-indent: 0px;">&nbsp;</p><p><code><br />http://www.google.com/search?num=50&amp;amp;hl=en&amp;amp;newwindow=1&amp;amp;tbo=1&amp;amp;output=search&amp;amp;source=lnt&amp;amp;tbs=qdr:y&amp;amp;sa=X&amp;amp;sourceid=navclient&amp;amp;gfns=1&amp;amp;q={searchTerms}<br /></code></p><p style="margin: 0px; text-indent: 0px;">이 주소를 <strong>Url template</strong> 란에 넣어주면 되는거에요.</p><p style="margin: 0px; text-indent: 0px;"><strong>Image</strong>의 경우는 16*16 크기의 그림파일을 열어 base64코드로 변환해 줍니다.</p><p style="margin: 0px; text-indent: 0px;">아래 사이트에서 base64코드로 변경 할 수 있어요.</p><p style="margin: 0px; text-indent: 0px;"><a title="base64 decoder encoder" href="http://www.motobit.com/util/base64-decoder-encoder.asp" target="_blank">base64 sample decoder and encoder </a></p><p style="margin: 0px; text-indent: 0px;">&nbsp;</p><p style="margin: 0px; text-indent: 0px;">이미지는 건너 뛰어도 무리없이 작동합니다.:D</p><p style="margin: 0px; text-indent: 0px;">&nbsp;</p><p style="margin: 0px; text-indent: 0px;">또 제가 꽤 자주 쓰는 검색엔진이 있는데, 바로 국립국어원 표준국어대사전입니다.</p><p style="margin: 0px; text-indent: 0px;">국어 사전을 볼 때마다 제가 한국에 태어난 걸 참 다행이라고 생각해요.</p><p style="margin: 0px; text-indent: 0px;">이걸 외국어로 배우려고 했으면 얼마나 머리가 아팠을지.. 어휴.</p><p style="margin: 0px; text-indent: 0px;">&nbsp;</p><p style="margin: 0px; text-indent: 0px;">파이어폭스용 국립국어원 표준국어대사전 검색 애드온이 필요하시다면 아래 링크에서 내려받으세요.</p><p style="margin: 0px; text-indent: 0px;"><a title="표준국어대사전 검색 애드온" href="https://addons.mozilla.org/en-US/firefox/addon/표준국어대사전" target="_blank">https://addons.mozilla.org/en-US/firefox/addon/표준국어대사전</a></p><p style="margin: 0px; text-indent: 0px;">&nbsp;</p><p style="margin: 0px; text-indent: 0px;">검색 에드온에 대해 더 자세히 알고 싶다면 아래 링크를 참조하세요.</p><p style="margin: 0px; text-indent: 0px;"><a title="Creating OpenSearch plugins for Firefox" href="https://developer.mozilla.org/en/Creating_OpenSearch_plugins_for_Firefox" target="_blank">Creating OpenSearch plugins for Firefox</a></p><p style="margin: 0px; text-indent: 0px;">&nbsp;</p>
+        </p>
+        <div align="center">
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- static bottom -->
+<ins class="adsbygoogle"
+style="display:inline-block;width:728px;height:90px"
+data-ad-client="ca-pub-4159714136965100"
+data-ad-slot="5066849540"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+ 
+    </div>
+    
+</article>
+        </div>
+    <div id="disqus_thread"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript></div>
+<script type="text/javascript">
+    var disqus_shortname = 'dorajistyle-static';
+    var disqus_url = 'http://dorajistyle.net/IT/web/나만의-파이어폭스-검색-에드온-만들기-(firefox-search-addon)-2012-01-28.html';
+    var disqus_identifier = disqus_url;
+    var disqus_title = '나만의 파이어폭스 검색 에드온 만들기 (Firefox search addon)';
+
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+
+    <div id="me">
+    <p>
+        <img src="http://www.gravatar.com/avatar/8791361c5e3bb3cfa949de550d87e27b?s=100" alt="JoongSeob Vito Kim" />
+      한 줄의 코드와 몇 개의 단어로 디지털과 아날로그를 오가는 여행자.<br/> 
+게으름뱅이를 위한 세상을 만드는 것이 삶의 목표이다.<br/>A vagabond who travels between digital and analog with a line of code and a few words.<br/> The goal of life is creating the milieu of lazybones.</p>
+    <p>
+       &#8226; <a href="https://github.com/dorajistyle" target="_blank" title="dorajistyle's GitHub"><i class="ion-social-github"></i>GitHub</a> &#8226; 
+        <a href="#sendEmailForm" onClick="showEmailForm();"><i class="ion-email"></i>Email Me</a>
+    </p>
+</div>
+<div class="ss-form"><form class="pure-form pure-form-stacked" onsubmit="return validateForm();" target="_private_message" action="" method="POST" id="sendEmailForm" hidden>
+<fieldset>
+<div class="pure-control-group"><div class="errorbox-good">
+<div class="ss-item ss-item-required ss-text"><div class="ss-form-entry"><label for="entry_0" class="ss-q-title">보내는 분 성함 <span class="red">*</span></label><input name="entry.270478495" value="" class="ss-q-short pure-input-1-2" id="entry_270478495" type="text" placeholder="Name" aria-required="true" required=""></div></div></div></div>
+<br>
+<div class="pure-control-group"><div class="errorbox-good">
+<div class="ss-item ss-item-required ss-text"><div class="ss-form-entry"> <label class="ss-q-title" for="entry_1">이메일 주소 <span class="red">*</span></label><input name="entry.2021847284" value="" class="ss-q-short pure-input-1-2" id="entry_2021847284" aria-required="true" required="" pattern=".*^[a-zA-Z0-9.!#$%&amp;amp;&#39;*+\-\/=?\^_`{|}~\-]+@[a-zA-Z0-9\-]+(?:\.[a-zA-Z0-9\-]+)*$.*" type="text" placeholder="email@address"></div></div></div></div><br>
+<div class="pure-control-group"><div class="errorbox-good">
+<div class="ss-item ss-item-required ss-paragraph-text"><div class="ss-form-entry"><label class="ss-q-title" for="entry_2">전하실 말씀 <span class="red">*</span></label><textarea name="entry.2125433964" rows="8" cols="75" class="pure-input-1-2 ss-q-long" id="entry_2125433964" placeholder="Have a nice day!!" aria-required="true" required=""></textarea></div></div></div></div><br>
+<div class="pure-controls"><div class="errorbox-good">
+<div class="ss-item"><div class="ss-form-entry"><label for="group_1798525724_1" class="ss-q-title pure-checkbox"><input type="checkbox" name="entry.1798525724" value="&#45348; (Yes)" id="group_1798525724_1" aria-required="true" role="checkbox"> 이메일을 보내시겠습니까?(Are you sure to send an email?)</label>
+</div></div></div></div>
+<br/>
+<div class="pure-controls">
+<input type="hidden" name="draftResponse" value="[,,&quot;7697741025179685837&quot;]
+">
+<input type="hidden" name="pageHistory" value="0">
+<input type="hidden" name="fbzx" value="7697741025179685837">
+<div class="ss-item ss-navigate"><div class="ss-form-entry" hidden>
+<input type="submit" name="submit" id="ss-submit" class="pure-button pure-button-primary" value="메일 보내기"> 
+</div>
+<a class="pure-button submit" href="#" onclick="submitForm();">
+    <i class="ion-paper-airplane"></i>
+    메일 보내기
+</a>
+</div></div></fieldset></form></div>
+ 
+
+    </div>
+
+<footer>
+		
+	</footer>
+
+	
+
+</div>
+
+
+	<div class="pure-u-1">
+        <footer class="footer">
+			&copy;  2014 JoongSeob Vito Kim
+        </footer>
+	</div>
+</div>
+
+	<!-- Scripts -->
+	<script defer="defer"  src="/scripts/main.js"></script>
+</body>
+</html>

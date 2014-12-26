@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<!-- Meta -->
+	<meta charset="utf-8" />
+
+	<!-- Mobile viewport optimized: h5bp.com/viewport -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+
+	<!-- Use the .htaccess and remove these lines to avoid edge case issues.
+	   More info: h5bp.com/i/378 -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+	<!-- Our site title and description -->
+	<title>SQLAlchemy 쿼리 최적화 | 월풍도원(月風道院) STATIC Version - Delight on the Simple Life</title>
+	<meta name="description" content="방랑자의 이야기 STATIC 버전.(STATIC version of stories about vagabond.)" />
+	<meta name="keywords" content="여행, 명상, 철학, 방랑, 행복, 인생, IT, vagabond, travel, trip, meditation, philosophy, happiness, life" />
+	<meta name="author" content="JOONGSEOB VITO KIM" />
+
+<meta property="og:title" content="SQLAlchemy 쿼리 최적화 | 월풍도원(月風道院) STATIC Version - Delight on the Simple Life">
+<meta property="og:description" content="방랑자의 이야기 STATIC 버전.(STATIC version of stories about vagabond.)">
+<meta property="og:type" content="article">
+<meta property="og:url" content="http://dorajistyle.net">
+<meta property="og:site_name" content="월풍도원(月風道院) STATIC Version - Delight on the Simple Life">
+<meta name="twitter:card" content="방랑자의 이야기 STATIC 버전.(STATIC version of stories about vagabond.)">
+<meta name="twitter:url" content="http://dorajistyle.net">
+<meta name="twitter:title" content="SQLAlchemy 쿼리 최적화 | 월풍도원(月風道院) STATIC Version - Delight on the Simple Life">
+<meta name="twitter:description" content="방랑자의 이야기 STATIC 버전.(STATIC version of stories about vagabond.)">
+<meta itemprop="name" content="SQLAlchemy 쿼리 최적화 | 월풍도원(月風道院) STATIC Version - Delight on the Simple Life">
+<meta itemprop="description" content="방랑자의 이야기 STATIC 버전.(STATIC version of stories about vagabond.)">
+
+	<!-- Output DocPad produced meta elements -->
+	<meta name="generator" content="DocPad v6.69.0" />
+
+	<!-- Icons -->
+    <link rel="shortcut icon" href="icons/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="icons/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="icons/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="icons/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="icons/apple-touch-icon-57-precomposed.png">
+
+	<!-- Shims: IE6-8 support of HTML5 elements -->
+	<!--[if lt IE 9]>
+		<script async src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+
+	<!-- Styles -->
+	<link  rel="stylesheet" href="http://yui.yahooapis.com/pure/0.3.0/pure-min.css" /><link  rel="stylesheet" href="http://code.ionicframework.com/ionicons/1.5.2/css/ionicons.min.css" /><link  rel="stylesheet" href="/styles/style.css" />
+	
+</head>
+<body>
+
+<!-- Markup -->
+<div class="pure-g-r" id="layout">
+	
+	<div class="sidebar pure-u">
+<header class="header">
+<hgroup>
+      <a href="/"><img class="logo" src="/images/logo.jpg" /></a>
+        <h3 class="brand-title">IT 이야기</h3>
+        <h4 class="brand-tagline">소프트웨어 개발과 IT전반에 걸친 이야기.</h4>
+</hgroup>
+		<nav id="nav-horizontal-menu" class="nav">
+
+			<ul id="std-menu-items" class="nav-list">
+	        		<li class="nav-item"><a href="/" class="pure-button"><i class="ion-ios7-home"></i></a></li>
+                                
+				
+					<li typeof="sioc:Page" about="/IT/3D.html" class="nav-item ">
+						<a class="pure-button" href="/IT/3D.html" property="dc:title">3D</a>
+					</li>
+				
+					<li typeof="sioc:Page" about="/IT/index.html" class="nav-item ">
+						<a class="pure-button" href="/IT/index.html" property="dc:title">IT</a>
+					</li>
+				
+					<li typeof="sioc:Page" about="/IT/OS.html" class="nav-item ">
+						<a class="pure-button" href="/IT/OS.html" property="dc:title">OS</a>
+					</li>
+				
+					<li typeof="sioc:Page" about="/IT/app.html" class="nav-item ">
+						<a class="pure-button" href="/IT/app.html" property="dc:title">app</a>
+					</li>
+				
+					<li typeof="sioc:Page" about="/IT/blog.html" class="nav-item ">
+						<a class="pure-button" href="/IT/blog.html" property="dc:title">blog</a>
+					</li>
+				
+					<li typeof="sioc:Page" about="/IT/db.html" class="nav-item ">
+						<a class="pure-button" href="/IT/db.html" property="dc:title">db</a>
+					</li>
+				
+					<li typeof="sioc:Page" about="/IT/development.html" class="nav-item ">
+						<a class="pure-button" href="/IT/development.html" property="dc:title">development</a>
+					</li>
+				
+					<li typeof="sioc:Page" about="/IT/etc.html" class="nav-item ">
+						<a class="pure-button" href="/IT/etc.html" property="dc:title">etc</a>
+					</li>
+				
+					<li typeof="sioc:Page" about="/IT/mobile.html" class="nav-item ">
+						<a class="pure-button" href="/IT/mobile.html" property="dc:title">mobile</a>
+					</li>
+				
+					<li typeof="sioc:Page" about="/IT/sccm.html" class="nav-item ">
+						<a class="pure-button" href="/IT/sccm.html" property="dc:title">sccm</a>
+					</li>
+				
+					<li typeof="sioc:Page" about="/IT/testing.html" class="nav-item ">
+						<a class="pure-button" href="/IT/testing.html" property="dc:title">testing</a>
+					</li>
+				
+					<li typeof="sioc:Page" about="/IT/tip.html" class="nav-item ">
+						<a class="pure-button" href="/IT/tip.html" property="dc:title">tip</a>
+					</li>
+				
+					<li typeof="sioc:Page" about="/IT/web.html" class="nav-item ">
+						<a class="pure-button" href="/IT/web.html" property="dc:title">web</a>
+					</li>
+				
+					<li typeof="sioc:Page" about="/IT/이론.html" class="nav-item ">
+						<a class="pure-button" href="/IT/이론.html" property="dc:title">이론</a>
+					</li>
+				
+					<li typeof="sioc:Page" about="/IT/환경.html" class="nav-item ">
+						<a class="pure-button" href="/IT/환경.html" property="dc:title">환경</a>
+					</li>
+				
+                           
+			</ul>
+		</nav>
+                </header>
+</div>
+
+
+
+<div class="pure-u-1">
+    <div class="content">
+    <div class="posts">
+<article id="post" class="post">
+    <header class="post-header">
+    
+    <h1 class="post-title">SQLAlchemy 쿼리 최적화</h1>
+    
+    </header>
+    <div class="post-content">
+        <div align="center">
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- static_blog_top -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:336px;height:280px"
+     data-ad-client="ca-pub-4159714136965100"
+     data-ad-slot="8471411541"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+ 
+        <p>
+        <h2 id="article_summary" class="summary">joinedload를 사용한 SQLAlchemy 쿼리 최적화</h2><br />SQLAlchemy는 파이썬(Python)용 Object Relational Mapper다.<br />ORM(Object Relational Mapper)은 객체(Object)와 관계형 데이터베이스(RDB - Relational Database)의 데이터 타입을 연결해 주는데,<br />이게 나오기 전엔 개발을 어떻게 했었나 싶을 정도로 아주 편리하다.<br /><br />사용법도 간단해서 짧은 코드로 쿼리를 날리면 모델 하나를 딱 불러온다.<br /><code>Model.get(model_id)</code><br />정말 좋다.<br />아무런 문제가 없었다.<br />적어도 외부 DB를 사용해 시험해 보기 전엔 그랬다.<br />외부 DB는 요청을 보내고 받는 시간이 길다.<br />헌데 SQLALCHEMY에서 자동으로 만들어 주는 쿼리를 쓰면, 너무 많은 요청을 보내게 된다.<br />그렇다면 성능을 향상하기 위해선?<br />요청 수를 줄이면 된다.<br /><br /><a href="http://farm4.staticflickr.com/3749/12113977566_920131d731_o.png"><img class="photo" src="http://farm4.staticflickr.com/3749/12113977566_920131d731_o.png" alt="예제 모델-'SQLAlchemy Query Optimization. 쿼리 최적화'" width="640" height="413" /></a><br /><br />예제의 product테이블은 여러 테이블과 연결되어 있는데,<br />쿼리를 날려 product와 관련된 테이블의 정보를 모두 불러와야 한다.<br />Sqlalchemy의 기본 쿼리 설정은 select로 연관된 table을 독립된 SELECT쿼리로 호출하지만,<br />응답시간이 느린 외부 DB를 쓴다면, 이를 join해서 쿼리 개수를 줄이면 된다.<br /><br /><h3>sqlalchemy에서 join은 어떻게 하는가?</h3>모델을 생성할 때 lazy='joined'를 써서 관련 테이블을 부를 때 join하는 방법과,<br />joinedload를 이용한 join 방법이 있다.<br />모델 생성 시 lazy를 사용해 join한 경우, 모델 호출 시마다 join이 되므로,<br />예제에선 필요한 상황에만 쿼리를 join하는, joinedload를 사용했다.<br /><br /><h3>joinedload 간략 사용 방법</h3><code>Model.query.options(db.joinedload(Model.relatedModel).all()</code><br /><br /><h3>SQLAlchemy 쿼리 최적화 방법</h3><ul><li>1..1 관계는 innerjoin한다.<br />db.joinedload(Seller, innerjoin=True)</li><li>1..n 관계는 innerjoin하지 않는다.<br />db.joinedload(Tags)</li><li>1..n 관계에서 관계가 깊다면, subqueryload를 써서 관련 테이블을 불러오고,<br />그에 대해 joinedload를 해준다.<br />db.subqueryload(Colors),<br />db.joinedload(Colors, Inventory)</li></ul><a href="http://farm6.staticflickr.com/5490/12167719646_bb62a4aa6d_o.png"><img class="photo" src="http://farm6.staticflickr.com/5490/12167719646_bb62a4aa6d_o.png" alt="SQLAlchemy Query Optimization. 쿼리 최적화" width="617" height="52" /></a><br /><br />위 방법을 써서 Call 개수를 25% 줄였다.<br />보통 Call이 29~30개가 나오다가, 22로 줄었으니, 약 7.5개 준 것이다.<br />Call당 시간이 얼마나 걸리냐에 따라 시간 단축이 가능한데,<br />테스트 환경에서 0.08초 정도 걸렸으므로 약 0.6초(0.08 * 7.5) 의 시간을 단축했다.<br />이건 데이터베이스의 응답 지연이 얼마나 되느냐에 따라 더 큰 차이를 보인다.<br />물론 로컬 db에서는 percall시간이 아주 짧으므로(테스트 환경에선 0.001초) 이런 최적화 차이를 체감하지 못한다.<br /><br /><h3>참조</h3><a href="http://docs.sqlalchemy.org/en/rel09/orm/relationships.html" target="_blank">http://docs.sqlalchemy.org/en/rel<em>0</em>9/orm/relationships.html</a><br /><a href="http://docs.sqlalchemy.org/en/rel09/orm/loading.html" target="_blank">http://docs.sqlalchemy.org/en/rel<em>0</em>9/orm/loading.html</a><br /><a href="http://stackoverflow.com/questions/6935809/how-to-use-joinedload-contains-eager-for-query-enabled-relationships-lazy-dyna" target="_blank">http://stackoverflow.com/questions/6935809/how-to-use-joinedload-contains-eager-for-query-enabled-relationships-lazy-dyna</a><br /><a href="http://invenio-software.org/wiki/Tools/SQLAlchemy/Performance" target="_blank">http://invenio-software.org/wiki/Tools/SQLAlchemy/Performance</a>
+        </p>
+        <div align="center">
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- static bottom -->
+<ins class="adsbygoogle"
+style="display:inline-block;width:728px;height:90px"
+data-ad-client="ca-pub-4159714136965100"
+data-ad-slot="5066849540"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+ 
+    </div>
+    
+</article>
+        </div>
+    <div id="disqus_thread"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript></div>
+<script type="text/javascript">
+    var disqus_shortname = 'dorajistyle-static';
+    var disqus_url = 'http://dorajistyle.net/IT/db/sqlalchemy-쿼리-최적화-2014-01-27.html';
+    var disqus_identifier = disqus_url;
+    var disqus_title = 'SQLAlchemy 쿼리 최적화';
+
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+
+    <div id="me">
+    <p>
+        <img src="http://www.gravatar.com/avatar/8791361c5e3bb3cfa949de550d87e27b?s=100" alt="JoongSeob Vito Kim" />
+      한 줄의 코드와 몇 개의 단어로 디지털과 아날로그를 오가는 여행자.<br/> 
+게으름뱅이를 위한 세상을 만드는 것이 삶의 목표이다.<br/>A vagabond who travels between digital and analog with a line of code and a few words.<br/> The goal of life is creating the milieu of lazybones.</p>
+    <p>
+       &#8226; <a href="https://github.com/dorajistyle" target="_blank" title="dorajistyle's GitHub"><i class="ion-social-github"></i>GitHub</a> &#8226; 
+        <a href="#sendEmailForm" onClick="showEmailForm();"><i class="ion-email"></i>Email Me</a>
+    </p>
+</div>
+<div class="ss-form"><form class="pure-form pure-form-stacked" onsubmit="return validateForm();" target="_private_message" action="" method="POST" id="sendEmailForm" hidden>
+<fieldset>
+<div class="pure-control-group"><div class="errorbox-good">
+<div class="ss-item ss-item-required ss-text"><div class="ss-form-entry"><label for="entry_0" class="ss-q-title">보내는 분 성함 <span class="red">*</span></label><input name="entry.270478495" value="" class="ss-q-short pure-input-1-2" id="entry_270478495" type="text" placeholder="Name" aria-required="true" required=""></div></div></div></div>
+<br>
+<div class="pure-control-group"><div class="errorbox-good">
+<div class="ss-item ss-item-required ss-text"><div class="ss-form-entry"> <label class="ss-q-title" for="entry_1">이메일 주소 <span class="red">*</span></label><input name="entry.2021847284" value="" class="ss-q-short pure-input-1-2" id="entry_2021847284" aria-required="true" required="" pattern=".*^[a-zA-Z0-9.!#$%&amp;amp;&#39;*+\-\/=?\^_`{|}~\-]+@[a-zA-Z0-9\-]+(?:\.[a-zA-Z0-9\-]+)*$.*" type="text" placeholder="email@address"></div></div></div></div><br>
+<div class="pure-control-group"><div class="errorbox-good">
+<div class="ss-item ss-item-required ss-paragraph-text"><div class="ss-form-entry"><label class="ss-q-title" for="entry_2">전하실 말씀 <span class="red">*</span></label><textarea name="entry.2125433964" rows="8" cols="75" class="pure-input-1-2 ss-q-long" id="entry_2125433964" placeholder="Have a nice day!!" aria-required="true" required=""></textarea></div></div></div></div><br>
+<div class="pure-controls"><div class="errorbox-good">
+<div class="ss-item"><div class="ss-form-entry"><label for="group_1798525724_1" class="ss-q-title pure-checkbox"><input type="checkbox" name="entry.1798525724" value="&#45348; (Yes)" id="group_1798525724_1" aria-required="true" role="checkbox"> 이메일을 보내시겠습니까?(Are you sure to send an email?)</label>
+</div></div></div></div>
+<br/>
+<div class="pure-controls">
+<input type="hidden" name="draftResponse" value="[,,&quot;7697741025179685837&quot;]
+">
+<input type="hidden" name="pageHistory" value="0">
+<input type="hidden" name="fbzx" value="7697741025179685837">
+<div class="ss-item ss-navigate"><div class="ss-form-entry" hidden>
+<input type="submit" name="submit" id="ss-submit" class="pure-button pure-button-primary" value="메일 보내기"> 
+</div>
+<a class="pure-button submit" href="#" onclick="submitForm();">
+    <i class="ion-paper-airplane"></i>
+    메일 보내기
+</a>
+</div></div></fieldset></form></div>
+ 
+
+    </div>
+
+<footer>
+		
+	</footer>
+
+	
+
+</div>
+
+
+	<div class="pure-u-1">
+        <footer class="footer">
+			&copy;  2014 JoongSeob Vito Kim
+        </footer>
+	</div>
+</div>
+
+	<!-- Scripts -->
+	<script defer="defer"  src="/scripts/main.js"></script>
+</body>
+</html>

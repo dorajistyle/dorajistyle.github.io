@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<!-- Meta -->
+	<meta charset="utf-8" />
+
+	<!-- Mobile viewport optimized: h5bp.com/viewport -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+
+	<!-- Use the .htaccess and remove these lines to avoid edge case issues.
+	   More info: h5bp.com/i/378 -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+	<!-- Our site title and description -->
+	<title>저사양 컴퓨터에서 Arch linux  환경 최적화 | 월풍도원(月風道院) STATIC Version - Delight on the Simple Life</title>
+	<meta name="description" content="방랑자의 이야기 STATIC 버전.(STATIC version of stories about vagabond.)" />
+	<meta name="keywords" content="여행, 명상, 철학, 방랑, 행복, 인생, IT, vagabond, travel, trip, meditation, philosophy, happiness, life" />
+	<meta name="author" content="JOONGSEOB VITO KIM" />
+
+<meta property="og:title" content="저사양 컴퓨터에서 Arch linux  환경 최적화 | 월풍도원(月風道院) STATIC Version - Delight on the Simple Life">
+<meta property="og:description" content="방랑자의 이야기 STATIC 버전.(STATIC version of stories about vagabond.)">
+<meta property="og:type" content="article">
+<meta property="og:url" content="http://dorajistyle.net">
+<meta property="og:site_name" content="월풍도원(月風道院) STATIC Version - Delight on the Simple Life">
+<meta name="twitter:card" content="방랑자의 이야기 STATIC 버전.(STATIC version of stories about vagabond.)">
+<meta name="twitter:url" content="http://dorajistyle.net">
+<meta name="twitter:title" content="저사양 컴퓨터에서 Arch linux  환경 최적화 | 월풍도원(月風道院) STATIC Version - Delight on the Simple Life">
+<meta name="twitter:description" content="방랑자의 이야기 STATIC 버전.(STATIC version of stories about vagabond.)">
+<meta itemprop="name" content="저사양 컴퓨터에서 Arch linux  환경 최적화 | 월풍도원(月風道院) STATIC Version - Delight on the Simple Life">
+<meta itemprop="description" content="방랑자의 이야기 STATIC 버전.(STATIC version of stories about vagabond.)">
+
+	<!-- Output DocPad produced meta elements -->
+	<meta name="generator" content="DocPad v6.69.0" />
+
+	<!-- Icons -->
+    <link rel="shortcut icon" href="icons/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="icons/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="icons/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="icons/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="icons/apple-touch-icon-57-precomposed.png">
+
+	<!-- Shims: IE6-8 support of HTML5 elements -->
+	<!--[if lt IE 9]>
+		<script async src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+
+	<!-- Styles -->
+	<link  rel="stylesheet" href="http://yui.yahooapis.com/pure/0.3.0/pure-min.css" /><link  rel="stylesheet" href="http://code.ionicframework.com/ionicons/1.5.2/css/ionicons.min.css" /><link  rel="stylesheet" href="/styles/style.css" />
+	
+</head>
+<body>
+
+<!-- Markup -->
+<div class="pure-g-r" id="layout">
+	
+	<div class="sidebar pure-u">
+<header class="header">
+<hgroup>
+      <a href="/"><img class="logo" src="/images/logo.jpg" /></a>
+        <h3 class="brand-title">IT 이야기</h3>
+        <h4 class="brand-tagline">소프트웨어 개발과 IT전반에 걸친 이야기.</h4>
+</hgroup>
+		<nav id="nav-horizontal-menu" class="nav">
+
+			<ul id="std-menu-items" class="nav-list">
+	        		<li class="nav-item"><a href="/" class="pure-button"><i class="ion-ios7-home"></i></a></li>
+                                
+				
+					<li typeof="sioc:Page" about="/IT/3D.html" class="nav-item ">
+						<a class="pure-button" href="/IT/3D.html" property="dc:title">3D</a>
+					</li>
+				
+					<li typeof="sioc:Page" about="/IT/index.html" class="nav-item ">
+						<a class="pure-button" href="/IT/index.html" property="dc:title">IT</a>
+					</li>
+				
+					<li typeof="sioc:Page" about="/IT/OS.html" class="nav-item ">
+						<a class="pure-button" href="/IT/OS.html" property="dc:title">OS</a>
+					</li>
+				
+					<li typeof="sioc:Page" about="/IT/app.html" class="nav-item ">
+						<a class="pure-button" href="/IT/app.html" property="dc:title">app</a>
+					</li>
+				
+					<li typeof="sioc:Page" about="/IT/blog.html" class="nav-item ">
+						<a class="pure-button" href="/IT/blog.html" property="dc:title">blog</a>
+					</li>
+				
+					<li typeof="sioc:Page" about="/IT/db.html" class="nav-item ">
+						<a class="pure-button" href="/IT/db.html" property="dc:title">db</a>
+					</li>
+				
+					<li typeof="sioc:Page" about="/IT/development.html" class="nav-item ">
+						<a class="pure-button" href="/IT/development.html" property="dc:title">development</a>
+					</li>
+				
+					<li typeof="sioc:Page" about="/IT/etc.html" class="nav-item ">
+						<a class="pure-button" href="/IT/etc.html" property="dc:title">etc</a>
+					</li>
+				
+					<li typeof="sioc:Page" about="/IT/mobile.html" class="nav-item ">
+						<a class="pure-button" href="/IT/mobile.html" property="dc:title">mobile</a>
+					</li>
+				
+					<li typeof="sioc:Page" about="/IT/sccm.html" class="nav-item ">
+						<a class="pure-button" href="/IT/sccm.html" property="dc:title">sccm</a>
+					</li>
+				
+					<li typeof="sioc:Page" about="/IT/testing.html" class="nav-item ">
+						<a class="pure-button" href="/IT/testing.html" property="dc:title">testing</a>
+					</li>
+				
+					<li typeof="sioc:Page" about="/IT/tip.html" class="nav-item ">
+						<a class="pure-button" href="/IT/tip.html" property="dc:title">tip</a>
+					</li>
+				
+					<li typeof="sioc:Page" about="/IT/web.html" class="nav-item ">
+						<a class="pure-button" href="/IT/web.html" property="dc:title">web</a>
+					</li>
+				
+					<li typeof="sioc:Page" about="/IT/이론.html" class="nav-item ">
+						<a class="pure-button" href="/IT/이론.html" property="dc:title">이론</a>
+					</li>
+				
+					<li typeof="sioc:Page" about="/IT/환경.html" class="nav-item ">
+						<a class="pure-button" href="/IT/환경.html" property="dc:title">환경</a>
+					</li>
+				
+                           
+			</ul>
+		</nav>
+                </header>
+</div>
+
+
+
+<div class="pure-u-1">
+    <div class="content">
+    <div class="posts">
+<article id="post" class="post">
+    <header class="post-header">
+    
+    <h1 class="post-title">저사양 컴퓨터에서 Arch linux  환경 최적화</h1>
+    
+    </header>
+    <div class="post-content">
+        <div align="center">
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- static_blog_top -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:336px;height:280px"
+     data-ad-client="ca-pub-4159714136965100"
+     data-ad-slot="8471411541"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+ 
+        <p>
+        <h2 id="article_summary" class="summary">4G램 이하에서 Arch linux를 데스크탑으로 쓰기 위한 최적화.</h2><p>램이 4G라면 적은 건 아니다. 하지만 무거운 프로그램을 돌리려면 부족한 게 사실이다. 이를 해결하려고 Desktop Environment을 바꿔 보았지만 별 효과를 보지 못했다. 그래서 몇 가지 더 손을 본 결과 쓸만한 데스크탑 환경을 구축했다.</p><p>가장 큰 효과를 본 것은 스왑 메모리의 설정이었다. SSD에 자주 쓰고 지우면 수명이 단축된다고 하지만, 내 수명이 단축되지 않으려면 스왑을 써야했다. 스왑영역을 잡아주었더니, 버츄어 박스와 IDE 크롬과 파이어폭스를 띄워도 시스템이 멈추지 않는다.</p><h3>스왑 할당하기</h3><p>우선 아래 명령어로 할당된 스왑을 확인한다.<br /><code>sudo swapon -s<br />free -m</code></p><p>공간이 충분히 남아있는지도 확인한다.<br /><code>df -h</code></p><p>스왑 파일을 만든다.<br /><code>sudo fallocate -l 4G /swapfile</code></p><p>root 유저만 읽고 쓰도록 스왑 파일의 권한을 설정한다.<br /><code>sudo chmod 600 /swapfile</code></p><p>스왑 파일이 잘 만들어 졌는지 확인한다.<br /><code>ls -lh /swapfile</code></p><p>스왑 영역을 할당한다.<br /><code>sudo mkswap /swapfile</code></p><p>스왑 영역을 활성화한다.<br /><code>sudo swapon /swapfile</code></p><p>아래 명령어로 할당된 스왑을 확인한다.<br /><code>sudo swapon -s<br />free -m</code></p><p>/etc/fstab 파일에 스왑 설정을 추가한다.<br /><code>/swapfile none swap sw 0 0</code></p><p>/etc/sysctl.conf 파일에 다음을 추가한다.<br /><code>vm.swappiness=10<br />vm.vfs_cache_pressure = 50</code></p><p>스왑 영역을 지울 땐 아래 명령어를 쓰면 된다.<br /><code>swapoff -a<br />rm -f /swapfile</code></p><ul><li><a href="https://www.digitalocean.com/community/tutorials/how-to-add-swap-on-ubuntu-14-04" target="_blank">https://www.digitalocean.com/community/tutorials/how-to-add-swap-on-ubuntu-14-04</a></li></ul><h3>gnome-pty-helper 비활성화</h3><p>사용자가 얼마나 많은 터미널을 열었나 기록하는 헬퍼로 데스크톱 환경에서는 필요가 없다.</p><p><code>chmod 644 /usr/lib/vte/gnome-pty-helper<br />chmod 644 /usr/lib64/vte/gnome-pty-helper<br />chmod 644 /lib64/vte/gnome-pty-helper<br />chmod 644 /lib/vte/gnome-pty-helper</code></p><ul><li><a href="https://wiki.manjaro.org/index.php?title=Getridofthegnome-pty-helper_process" target="_blank">https://wiki.manjaro.org/index.php?title=Get<em>rid</em>of<em>the</em>gnome-pty-helper_process</a></li></ul><h3>Core dump 비활성화</h3><p>코어 덤프가 디버깅엔 유용하지만 평소에는 성능에 저하를 가져오므로 비활성화 한다.<br />/etc/sysctl.conf 파일에 다음을 추가한다.<br /><code>fs.suid_dumpable = 0</code></p><ul><li><a href="https://wiki.archlinux.org/index.php/Core_dump" target="_blank">https://wiki.archlinux.org/index.php/Core_dump</a></li></ul><h3>SSD trim 기능 켜기</h3><p><code>sudo pacman -S util-linux<br />sudo systemctl enable fstrim.timer</code></p><ul><li><a href="https://wiki.archlinux.org/index.php/SolidStateDrives%20trim" target="_blank">https://wiki.archlinux.org/index.php/Solid<em>State</em>Drives trim</a></li></ul><p>윈도우 메니저의 변경이 도움이 될 수도 있다.<br />가벼운 윈도우 메니져가 많다. FVWM과 ICEWM이 가벼운 편이었지만, 보기가 너무 안좋아서 지워버렸다. OpenBox는 좋은 모습을 보여주지만 XFCE의 기본 WM인 XFWM(14M)보다 두배가 넘는 메모리(31M)를 사용한다. 그래도 여전히 가벼운 편이니 취향에 따라 OpenBox로 윈도우메니져를 바꿔 보는 것도 괜찮겠다.</p><h3>xfce 윈도우 메니저 변경하기</h3><h4>설정 파일을 가져온다.</h4><p><code>cp /etc/xdg/xfce4/xfconf/xfce-perchannel-xml/xfce4-session.xml ~/.config/xfce4/xfconf/xfce-perchannel-xml/xfce4-session.xml</code></p><h4>~/.config/xfce4/xfconf/xfce-perchannel-xml/xfce4-session.xml 파일을 열어 xfwm4를 openbox로 변경한다.</h4><p><code>&lt;value type="string" value="xfwm4"/&gt;</code>to<br /><code>&lt;value type="string" value="window_manager_executable"/&gt;</code><br /></p><h4>오픈박스용 설정 설치</h4><p><code>pacman -S obconf</code></p><p>단축키가 제대로 동작하지 않으면 vi .config/openbox/rc.xml 에서 사용하지 않는 단축키를 제거한다.</p><h4>지금 사용하는 윈도우 메니저 보기</h4><p><code>pacman -S wmctrl<br />wmctrl -m</code></p><ul><li><a href="http://l3net.wordpress.com/2014/02/15/a-memory-comparison-of-light-linux-desktops-part-3/" target="_blank">http://l3net.wordpress.com/2014/02/15/a-memory-comparison-of-light-linux-desktops-part-3/</a></li><li><a href="http://openbenchmarking.org/result/1404130-PL-PERFORMAN65" target="_blank">http://openbenchmarking.org/result/1404130-PL-PERFORMAN65</a></li><li><a href="https://wiki.archlinux.org/index.php/Xfce#Defaultwindowmanager" target="_blank">https://wiki.archlinux.org/index.php/Xfce#Default<em>window</em>manager</a></li><li><a href="https://wiki.archlinux.org/index.php/Compton" target="_blank">https://wiki.archlinux.org/index.php/Compton</a></li><li><a href="http://www.slant.co/topics/390/~what-are-the-best-window-managers-for-linux" target="_blank">http://www.slant.co/topics/390/~what-are-the-best-window-managers-for-linux</a></li></ul><h3>가볍고 쓸만한 앱을 찾다가 보조 터미널로 좋은 tilda와 자원 점유율을 보여주는 htop을 설치했다.</h3><p><code>pacman -S tilda<br />pacman -S htop</code></p><br /><p>혹시 이 환경에서도 시스템이 불안정한 일이 자주 발생한다면 쓰는 자주 프로그램을 가벼운 걸로 바꾸어 보는 것도 괜찮을 것 같다. 예를 들면 이메일 클라이언트를 썬더버드에서 Trojita나 Geary등으로 바꾸는 것이다. 하지만 설정을 다시 하기는 귀찮으니 우선은 이대로 써야겠다.</p><br /><h3>문제 해결</h3><h4>키보드 단축키가 작동하지 않을 때</h4><p>로그아웃 하고 tty1(ctrl+alt+F1)에서 로그인 하여 rm -rf ~/.cache/sessions/* 로 세션 캐쉬를 삭제한다.</p><h4>Failed to fork (Resource temporarily unavailable) 오류가 날 때</h4><p>/etc/sysctl.conf 파일에 다음을 추가한다.<br /><code>fs.file-max = 204708</code></p><ul><li><a href="http://stackoverflow.com/questions/12079087/fork-retry-resource-temporarily-unavailable" target="_blank">http://stackoverflow.com/questions/12079087/fork-retry-resource-temporarily-unavailable</a></li></ul><h4>QT5에서 한글 입력이 안될 때</h4><p><code>yaourt -S uim-qt5 --force</code></p><h4>SHELL의 변경 (zsh)</h4><p><code>pacman -S zsh<br />zsh /usr/share/zsh/functions/Newuser/zsh-newuser-install -f<br />chsh -s $(which zsh)<br />echo $SHELL</code></p><ul><li><a href="https://wiki.archlinux.org/index.php/zsh" target="_blank">https://wiki.archlinux.org/index.php/zsh</a></li><li><a href="https://wiki.archlinux.org/index.php/Zsh#Key_bindings" target="_blank">https://wiki.archlinux.org/index.php/Zsh#Key_bindings</a></li></ul><h4>재부팅 하지 않고 sysctl 적용</h4><p><code>sudo sysctl -p /etc/sysctl.d/99-sysctl.conf</code></p><h3>그 밖에 읽어볼 만한 자료.</h3><ul><li><a href="http://wongdev.com/blog/most-popular-arch-linux-apps-2013/" target="_blank">http://wongdev.com/blog/most-popular-arch-linux-apps-2013/</a></li></ul><h3>SSD 최적화</h3><ul><li><a href="https://wiki.debian.org/SSDOptimization#Addingvm.swappinessinsysctlforthekernel" target="_blank">https://wiki.debian.org/SSDOptimization#Adding<em>vm.swappiness</em>in<em>sysctl</em>for<em>the</em>kernel</a></li><li><a href="http://www.leaseweblabs.com/2013/07/5-crucial-optimizations-for-ssd-usage-in-ubuntu-linux/" target="_blank">http://www.leaseweblabs.com/2013/07/5-crucial-optimizations-for-ssd-usage-in-ubuntu-linux/</a></li></ul><h4>베터리를 오래가게 돕는 도구</h4><ul><li><a href="https://aur.archlinux.org/packages/laptop-mode-tools" target="_blank">https://aur.archlinux.org/packages/laptop-mode-tools</a></li></ul><h4>실행중인 프로세스가 어떻게 자원을 사용할 지 제어하는 데몬</h4><ul><li><a href="https://wiki.archlinux.org/index.php/Ulatencyd" target="_blank">https://wiki.archlinux.org/index.php/Ulatencyd</a></li><li><a href="http://blog.garillot.net/post/43139769034/how-a-ram-disk-saved-my-life" target="_blank">http://blog.garillot.net/post/43139769034/how-a-ram-disk-saved-my-life</a></li></ul>
+        </p>
+        <div align="center">
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- static bottom -->
+<ins class="adsbygoogle"
+style="display:inline-block;width:728px;height:90px"
+data-ad-client="ca-pub-4159714136965100"
+data-ad-slot="5066849540"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+ 
+    </div>
+    
+</article>
+        </div>
+    <div id="disqus_thread"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript></div>
+<script type="text/javascript">
+    var disqus_shortname = 'dorajistyle-static';
+    var disqus_url = 'http://dorajistyle.net/IT/환경/저사양-컴퓨터에서-arch-linux-환경-최적화-2014-11-16.html';
+    var disqus_identifier = disqus_url;
+    var disqus_title = '저사양 컴퓨터에서 Arch linux  환경 최적화';
+
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+
+    <div id="me">
+    <p>
+        <img src="http://www.gravatar.com/avatar/8791361c5e3bb3cfa949de550d87e27b?s=100" alt="JoongSeob Vito Kim" />
+      한 줄의 코드와 몇 개의 단어로 디지털과 아날로그를 오가는 여행자.<br/> 
+게으름뱅이를 위한 세상을 만드는 것이 삶의 목표이다.<br/>A vagabond who travels between digital and analog with a line of code and a few words.<br/> The goal of life is creating the milieu of lazybones.</p>
+    <p>
+       &#8226; <a href="https://github.com/dorajistyle" target="_blank" title="dorajistyle's GitHub"><i class="ion-social-github"></i>GitHub</a> &#8226; 
+        <a href="#sendEmailForm" onClick="showEmailForm();"><i class="ion-email"></i>Email Me</a>
+    </p>
+</div>
+<div class="ss-form"><form class="pure-form pure-form-stacked" onsubmit="return validateForm();" target="_private_message" action="" method="POST" id="sendEmailForm" hidden>
+<fieldset>
+<div class="pure-control-group"><div class="errorbox-good">
+<div class="ss-item ss-item-required ss-text"><div class="ss-form-entry"><label for="entry_0" class="ss-q-title">보내는 분 성함 <span class="red">*</span></label><input name="entry.270478495" value="" class="ss-q-short pure-input-1-2" id="entry_270478495" type="text" placeholder="Name" aria-required="true" required=""></div></div></div></div>
+<br>
+<div class="pure-control-group"><div class="errorbox-good">
+<div class="ss-item ss-item-required ss-text"><div class="ss-form-entry"> <label class="ss-q-title" for="entry_1">이메일 주소 <span class="red">*</span></label><input name="entry.2021847284" value="" class="ss-q-short pure-input-1-2" id="entry_2021847284" aria-required="true" required="" pattern=".*^[a-zA-Z0-9.!#$%&amp;amp;&#39;*+\-\/=?\^_`{|}~\-]+@[a-zA-Z0-9\-]+(?:\.[a-zA-Z0-9\-]+)*$.*" type="text" placeholder="email@address"></div></div></div></div><br>
+<div class="pure-control-group"><div class="errorbox-good">
+<div class="ss-item ss-item-required ss-paragraph-text"><div class="ss-form-entry"><label class="ss-q-title" for="entry_2">전하실 말씀 <span class="red">*</span></label><textarea name="entry.2125433964" rows="8" cols="75" class="pure-input-1-2 ss-q-long" id="entry_2125433964" placeholder="Have a nice day!!" aria-required="true" required=""></textarea></div></div></div></div><br>
+<div class="pure-controls"><div class="errorbox-good">
+<div class="ss-item"><div class="ss-form-entry"><label for="group_1798525724_1" class="ss-q-title pure-checkbox"><input type="checkbox" name="entry.1798525724" value="&#45348; (Yes)" id="group_1798525724_1" aria-required="true" role="checkbox"> 이메일을 보내시겠습니까?(Are you sure to send an email?)</label>
+</div></div></div></div>
+<br/>
+<div class="pure-controls">
+<input type="hidden" name="draftResponse" value="[,,&quot;7697741025179685837&quot;]
+">
+<input type="hidden" name="pageHistory" value="0">
+<input type="hidden" name="fbzx" value="7697741025179685837">
+<div class="ss-item ss-navigate"><div class="ss-form-entry" hidden>
+<input type="submit" name="submit" id="ss-submit" class="pure-button pure-button-primary" value="메일 보내기"> 
+</div>
+<a class="pure-button submit" href="#" onclick="submitForm();">
+    <i class="ion-paper-airplane"></i>
+    메일 보내기
+</a>
+</div></div></fieldset></form></div>
+ 
+
+    </div>
+
+<footer>
+		
+	</footer>
+
+	
+
+</div>
+
+
+	<div class="pure-u-1">
+        <footer class="footer">
+			&copy;  2014 JoongSeob Vito Kim
+        </footer>
+	</div>
+</div>
+
+	<!-- Scripts -->
+	<script defer="defer"  src="/scripts/main.js"></script>
+</body>
+</html>
