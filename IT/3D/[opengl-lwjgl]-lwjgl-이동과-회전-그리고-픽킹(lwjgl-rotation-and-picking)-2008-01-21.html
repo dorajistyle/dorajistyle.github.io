@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<!-- Meta -->
+	<meta charset="utf-8" />
+
+	<!-- Mobile viewport optimized: h5bp.com/viewport -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+
+	<!-- Use the .htaccess and remove these lines to avoid edge case issues.
+	   More info: h5bp.com/i/378 -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+	<!-- Our site title and description -->
+	<title>[OPENGL,LWJGL] LWJGL 이동과 회전 그리고 픽킹(LWJGL - Rotation and Picking) | 월풍도원(月風道院) STATIC Version - Delight on the Simple Life</title>
+	<meta name="description" content="방랑자의 이야기 STATIC 버전.(STATIC version of stories about vagabond.)" />
+	<meta name="keywords" content="여행, 명상, 철학, 방랑, 행복, 인생, IT, vagabond, travel, trip, meditation, philosophy, happiness, life" />
+	<meta name="author" content="JOONGSEOB VITO KIM" />
+
+<meta property="og:title" content="[OPENGL,LWJGL] LWJGL 이동과 회전 그리고 픽킹(LWJGL - Rotation and Picking) | 월풍도원(月風道院) STATIC Version - Delight on the Simple Life">
+<meta property="og:description" content="방랑자의 이야기 STATIC 버전.(STATIC version of stories about vagabond.)">
+<meta property="og:type" content="article">
+<meta property="og:url" content="http://dorajistyle.net">
+<meta property="og:site_name" content="월풍도원(月風道院) STATIC Version - Delight on the Simple Life">
+<meta name="twitter:card" content="방랑자의 이야기 STATIC 버전.(STATIC version of stories about vagabond.)">
+<meta name="twitter:url" content="http://dorajistyle.net">
+<meta name="twitter:title" content="[OPENGL,LWJGL] LWJGL 이동과 회전 그리고 픽킹(LWJGL - Rotation and Picking) | 월풍도원(月風道院) STATIC Version - Delight on the Simple Life">
+<meta name="twitter:description" content="방랑자의 이야기 STATIC 버전.(STATIC version of stories about vagabond.)">
+<meta itemprop="name" content="[OPENGL,LWJGL] LWJGL 이동과 회전 그리고 픽킹(LWJGL - Rotation and Picking) | 월풍도원(月風道院) STATIC Version - Delight on the Simple Life">
+<meta itemprop="description" content="방랑자의 이야기 STATIC 버전.(STATIC version of stories about vagabond.)">
+
+	<!-- Output DocPad produced meta elements -->
+	<meta name="generator" content="DocPad v6.69.0" />
+
+	<!-- Icons -->
+    <link rel="shortcut icon" href="icons/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="icons/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="icons/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="icons/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="icons/apple-touch-icon-57-precomposed.png">
+
+	<!-- Shims: IE6-8 support of HTML5 elements -->
+	<!--[if lt IE 9]>
+		<script async src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+
+	<!-- Styles -->
+	<link  rel="stylesheet" href="http://yui.yahooapis.com/pure/0.3.0/pure-min.css" /><link  rel="stylesheet" href="http://code.ionicframework.com/ionicons/1.5.2/css/ionicons.min.css" /><link  rel="stylesheet" href="/styles/style.css" />
+	
+</head>
+<body>
+
+<!-- Markup -->
+<div class="pure-g-r" id="layout">
+	
+	<div class="sidebar pure-u">
+<header class="header">
+<hgroup>
+      <a href="/"><img class="logo" src="/images/logo.jpg" /></a>
+        <h3 class="brand-title">IT 이야기</h3>
+        <h4 class="brand-tagline">소프트웨어 개발과 IT전반에 걸친 이야기.</h4>
+</hgroup>
+		<nav id="nav-horizontal-menu" class="nav">
+
+			<ul id="std-menu-items" class="nav-list">
+	        		<li class="nav-item"><a href="/" class="pure-button"><i class="ion-ios7-home"></i></a></li>
+                                
+				
+					<li typeof="sioc:Page" about="/IT/3D.html" class="nav-item ">
+						<a class="pure-button" href="/IT/3D.html" property="dc:title">3D</a>
+					</li>
+				
+					<li typeof="sioc:Page" about="/IT/index.html" class="nav-item ">
+						<a class="pure-button" href="/IT/index.html" property="dc:title">IT</a>
+					</li>
+				
+					<li typeof="sioc:Page" about="/IT/OS.html" class="nav-item ">
+						<a class="pure-button" href="/IT/OS.html" property="dc:title">OS</a>
+					</li>
+				
+					<li typeof="sioc:Page" about="/IT/app.html" class="nav-item ">
+						<a class="pure-button" href="/IT/app.html" property="dc:title">app</a>
+					</li>
+				
+					<li typeof="sioc:Page" about="/IT/blog.html" class="nav-item ">
+						<a class="pure-button" href="/IT/blog.html" property="dc:title">blog</a>
+					</li>
+				
+					<li typeof="sioc:Page" about="/IT/db.html" class="nav-item ">
+						<a class="pure-button" href="/IT/db.html" property="dc:title">db</a>
+					</li>
+				
+					<li typeof="sioc:Page" about="/IT/development.html" class="nav-item ">
+						<a class="pure-button" href="/IT/development.html" property="dc:title">development</a>
+					</li>
+				
+					<li typeof="sioc:Page" about="/IT/etc.html" class="nav-item ">
+						<a class="pure-button" href="/IT/etc.html" property="dc:title">etc</a>
+					</li>
+				
+					<li typeof="sioc:Page" about="/IT/mobile.html" class="nav-item ">
+						<a class="pure-button" href="/IT/mobile.html" property="dc:title">mobile</a>
+					</li>
+				
+					<li typeof="sioc:Page" about="/IT/sccm.html" class="nav-item ">
+						<a class="pure-button" href="/IT/sccm.html" property="dc:title">sccm</a>
+					</li>
+				
+					<li typeof="sioc:Page" about="/IT/testing.html" class="nav-item ">
+						<a class="pure-button" href="/IT/testing.html" property="dc:title">testing</a>
+					</li>
+				
+					<li typeof="sioc:Page" about="/IT/tip.html" class="nav-item ">
+						<a class="pure-button" href="/IT/tip.html" property="dc:title">tip</a>
+					</li>
+				
+					<li typeof="sioc:Page" about="/IT/web.html" class="nav-item ">
+						<a class="pure-button" href="/IT/web.html" property="dc:title">web</a>
+					</li>
+				
+					<li typeof="sioc:Page" about="/IT/이론.html" class="nav-item ">
+						<a class="pure-button" href="/IT/이론.html" property="dc:title">이론</a>
+					</li>
+				
+					<li typeof="sioc:Page" about="/IT/환경.html" class="nav-item ">
+						<a class="pure-button" href="/IT/환경.html" property="dc:title">환경</a>
+					</li>
+				
+                           
+			</ul>
+		</nav>
+                </header>
+</div>
+
+
+
+<div class="pure-u-1">
+    <div class="content">
+    <div class="posts">
+<article id="post" class="post">
+    <header class="post-header">
+    
+    <h1 class="post-title">[OPENGL,LWJGL] LWJGL 이동과 회전 그리고 픽킹(LWJGL - Rotation and Picking)</h1>
+    
+    </header>
+    <div class="post-content">
+        <div align="center">
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- static_blog_top -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:336px;height:280px"
+     data-ad-client="ca-pub-4159714136965100"
+     data-ad-slot="8471411541"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+ 
+        <p>
+        <div class="imageblock left" style="float: left; text-align: center; padding: 10px;"><img src="http://images.google.com/images?q=tbn:rWl8OG-5OfCGGM::www.lwjgl.org/_gfx/installation/eclipse-1.png" alt="LWJGL 이동과 회전(LWJGL - Rotation and Picking)[LWJGL,이동,회전,Rotation and Picking,lwjgl.org,Lightweight Java Game Library]" height="109" width="130"><p style="margin-top: 5px;"><span>이미지출처</span>&nbsp;: <a href="http://www.lwjgl.org/installation.php" onclick="window.open(this.href);return false;"><span style="color: rgb(0, 128, 0);">www.lwjgl.org</span></a></p></div><b><font size="3">LWJGL 이동과 회전 그리고 픽킹(LWJGL - Rotation and Picking)</font></b><p></p><p><b></b></p><p><b><b></b></b></p><p><b><b><b></b></b></b></p><p><b><b><b><b></b></b></b></b></p><p><b><b><b><b><b></b></b></b></b></b></p><p><b><b><b><b><b><b></b></b></b></b></b></b></p><p><b><b><b><b><b><b><b></b></b></b></b></b></b></b></p><p><b><b><b><b><b><b><b><b></b></b></b></b></b></b></b></b></p><p><b><b><b><b><b><b><b><b><b><b></b></b></b></b></b></b></b></b></b></b></p><p><b><b><b><b><b><b><b><b><b><b><b></b></b></b></b></b></b></b></b></b></b></b></p><p><b><b><b><b><b><b><b><b><b><b><b><b></b></b></b></b></b></b></b></b></b></b></b></b></p><p><b><b><b><b><b><b><b><b><b><b><b><b><b></b></b></b></b></b></b></b></b></b></b></b></b></b></p><p><b><b><b><b><b><b><b><b><b><b><b><b><b><b></b></b></b></b></b></b></b></b></b></b></b></b></b></b></p><p><b><b><b><b><b><b><b><b><b><b><b><b><b><b><b></b></b></b></b></b></b></b></b></b></b></b></b></b></b></b></p><p><b><b><b><b><b><b><b><b><b><b><b><b><b><b><b><b></b></b></b></b></b></b></b></b></b></b></b></b></b></b></b></b></p><p><b><b><b><b><b><b><b><b><b><b><b><b><b><b><b><b><b></b></b></b></b></b></b></b></b></b></b></b></b></b></b></b></b></b></p><p><b><b><b><b><b><b><b><b><b><b><b><b><b><b><b><b><b><b></b></b></b></b></b></b></b></b></b></b></b></b></b></b></b></b></b></b></p><p><b><b><b><b><b><b><b><b><b><b><b><b><b><b><b><b><b><b><b><b><b>물체의 이동과 회전</b></b></b></b></b></b></b></b></b></b></b></b></b></b></b></b></b></b></b></b></b></p><b><b><b><b><b><b><b><b><b><b><b><b><b><b><b><b><b><b><b><b><br /></b></b></b></b></b></b></b></b></b></b></b></b></b></b></b></b></b></b></b></b><p class="amcode"><b><b><b><b><b><b><b><b><b><b><b><b><b><b><b><b><b><b><b><b>Code:</b></b></b></b></b></b></b></b></b></b></b></b></b></b></b></b></b></b></b></b></p><div class="codeblock amc_code amc_short"><b><b><b><b><b><b><b><b><b><b><b><b><b><b><b><b><b><b></b></b></b></b></b></b></b></b></b></b></b></b></b></b></b></b></b></b><table><tbody><tr class="amc_code_odd"><td><code><span class="amc_default">GL11.glTranslatef(this.xoff, this.yoff, this.zoff-this.centerAvgXYZ);</span></code></td></tr><tr class="amc_code_even"><td><code><span class="amc_default">&nbsp; &nbsp; &nbsp; &nbsp; GL11.glRotatef(this.xrot, 1.0f, 0.0f, 0.0f);</span></code></td></tr><tr class="amc_code_odd"><td><code><span class="amc_default">&nbsp; &nbsp; &nbsp; &nbsp; GL11.glRotatef(this.yrot, 0.0f, 1.0f, 0.0f);</span></code></td></tr></tbody></table></div><b><b><b><b><b><b><b><b><b><b><b><b><b><b><b><b><b><b><b><b><b><br /><br /></b></b></b></b></b></b></b></b></b></b></b></b></b></b></b></b></b></b></b></b></b><p><b><b><b><b><b><b><b><b><b><b><b><b><b><b><b><b><b><b><b><b><b><b>Picking </b></b></b></b></b></b></b></b></b></b></b></b></b></b></b></b></b></b></b></b></b></b></p><b><b><b><b><b><b><b><b><b><b><b><b><b><b><b><b><b><b><b><b><b><br /></b></b></b></b></b></b></b></b></b></b></b></b></b></b></b></b></b></b></b></b></b><p class="amcode"><b><b><b><b><b><b><b><b><b><b><b><b><b><b><b><b><b><b><b><b><b>Code:</b></b></b></b></b></b></b></b></b></b></b></b></b></b></b></b></b></b></b></b></b></p><div class="codeblock amc_code amc_long"><blockquote><b><b><b><b><b><b><b><b><b><b><b><b><b><b><b><b><b><b><b></b></b></b></b></b></b></b></b></b></b></b></b></b></b></b></b></b></b></b><table><tbody><tr class="amc_code_even"><td><code><span class="amc_default">public void SelectObjects(int x, int y) {</span></code></td></tr><tr class="amc_code_odd"><td><code><span class="amc_default">&nbsp; &nbsp; &nbsp; int hits;</span></code></td></tr><tr class="amc_code_even"><td><code><span class="amc_default">&nbsp; &nbsp; &nbsp; int[] viewport = new int[4];</span></code></td></tr><tr class="amc_code_odd"><td><code><span class="amc_default">&nbsp; &nbsp; &nbsp; int buffer[] = new int[256];</span></code></td></tr><tr class="amc_code_even"><td><code><span class="amc_default">&nbsp; &nbsp; &nbsp; IntBuffer selectBuff = ByteBuffer.allocateDirect(1024).order(ByteOrder.nativeOrder()).asIntBuffer();</span></code></td></tr><tr class="amc_code_odd"><td><code><span class="amc_default">&nbsp; &nbsp; &nbsp; &nbsp; IntBuffer vpBuffer = ByteBuffer.allocateDirect(64).order(ByteOrder.nativeOrder()).asIntBuffer();</span></code></td></tr><tr class="amc_code_even"><td><code><span class="amc_default">&nbsp; &nbsp; &nbsp; GL11.glGetInteger(GL11.GL_VIEWPORT, vpBuffer);</span></code></td></tr><tr class="amc_code_odd"><td><code><span class="amc_default">&nbsp; &nbsp; &nbsp; vpBuffer.get(viewport);</span></code></td></tr><tr class="amc_code_even"><td><code><span class="amc_default">&nbsp; &nbsp; &nbsp; GL11.glSelectBuffer(selectBuff);</span></code></td></tr><tr class="amc_code_odd"><td><code><span class="amc_default">&nbsp; &nbsp; &nbsp; GL11.glMatrixMode(GL11.GL_PROJECTION);</span></code></td></tr><tr class="amc_code_even"><td><code><span class="amc_default">&nbsp; &nbsp; &nbsp; GL11.glPushMatrix();</span></code></td></tr><tr class="amc_code_odd"><td><code><span class="amc_default">&nbsp; &nbsp; &nbsp; GL11.glRenderMode(GL11.GL_SELECT);</span></code></td></tr><tr class="amc_code_even"><td><code><span class="amc_default">&nbsp; &nbsp; &nbsp; GL11.glLoadIdentity();</span></code></td></tr><tr class="amc_code_odd"><td><code><span class="amc_default">&nbsp; &nbsp; &nbsp; GLU.gluPickMatrix((float)x,(float)(viewport[3]-y), 5.0f, 5.0f, viewport); &nbsp; &nbsp;</span></code></td></tr><tr class="amc_code_even"><td><code><span class="amc_default">&nbsp; &nbsp; &nbsp; &nbsp; GLU.gluPerspective(45.0f, ratio, 0.001f, 100.0f); </span></code></td></tr><tr class="amc_code_odd"><td><code><span class="amc_default">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; //Rectangle rect = this.canvas.getClientArea(); &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></code></td></tr><tr class="amc_code_even"><td><code><span class="amc_default">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; // ratio = (float) rect.width / (float) rect.height;</span></code></td></tr><tr class="amc_code_odd"><td><code><span class="amc_default">&nbsp; &nbsp; &nbsp; </span></code></td></tr><tr class="amc_code_even"><td><code><span class="amc_default">&nbsp; &nbsp; &nbsp; GL11.glMatrixMode(GL11.GL_MODELVIEW); // 물체를 그려줄때는 다시 모델뷰로..</span></code></td></tr><tr class="amc_code_odd"><td><code><span class="amc_default">&nbsp; &nbsp; &nbsp; drawScatterPlot(); &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;// 물체를 그려주고,</span></code></td></tr><tr class="amc_code_even"><td><code><span class="amc_default">&nbsp; &nbsp; &nbsp; GL11.glRotatef(this.xrot, 1.0f, 0.0f, 0.0f); &nbsp;// 그 후에 회전을 해준다.</span></code></td></tr><tr class="amc_code_odd"><td><code><span class="amc_default">&nbsp; &nbsp; &nbsp; &nbsp; GL11.glRotatef(this.yrot, 0.0f, 1.0f, 0.0f);</span></code></td></tr><tr class="amc_code_even"><td><code><span class="amc_default">&nbsp; &nbsp; &nbsp; &nbsp; </span></code></td></tr><tr class="amc_code_odd"><td><code><span class="amc_default">&nbsp; &nbsp; &nbsp; hits = GL11.glRenderMode(GL11.GL_RENDER);</span></code></td></tr><tr class="amc_code_even"><td><code><span class="amc_default">&nbsp; &nbsp; &nbsp; System.out.println("Hits : "+hits);</span></code></td></tr><tr class="amc_code_odd"><td><code><span class="amc_default">&nbsp; &nbsp; &nbsp; selectBuff.get(buffer);</span></code></td></tr><tr class="amc_code_even"><td><code><span class="amc_default">&nbsp; &nbsp; &nbsp; if(hits&gt;0) {</span></code></td></tr><tr class="amc_code_odd"><td><code><span class="amc_default">&nbsp; &nbsp; &nbsp; &nbsp; int selectedObjID = buffer[3];</span></code></td></tr><tr class="amc_code_even"><td><code><span class="amc_default">&nbsp; &nbsp; &nbsp; int depth = buffer[1];</span></code></td></tr><tr class="amc_code_odd"><td><code><span class="amc_default">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; for (int i = 1; i &lt; hits; i++) {</span></code></td></tr><tr class="amc_code_even"><td><code><span class="amc_default">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if (buffer[i * 4 + 1] &lt; (int) depth) {</span></code></td></tr><tr class="amc_code_odd"><td><code><span class="amc_default">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; selectedObjID = buffer[i * 4 + 3]; </span></code></td></tr><tr class="amc_code_even"><td><code><span class="amc_default">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; depth = buffer[i * 4 + 1];</span></code></td></tr><tr class="amc_code_odd"><td><code><span class="amc_default">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</span></code></td></tr><tr class="amc_code_even"><td><code><span class="amc_default">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</span></code></td></tr><tr class="amc_code_odd"><td><code><span class="amc_default">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ProcessSelect(selectedObjID);</span></code></td></tr><tr class="amc_code_even"><td><code><span class="amc_default">&nbsp; &nbsp; &nbsp; }</span></code></td></tr><tr class="amc_code_odd"><td><code><span class="amc_default">&nbsp; &nbsp; &nbsp; GL11.glMatrixMode(GL11.GL_PROJECTION); &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span></code></td></tr><tr class="amc_code_even"><td><code><span class="amc_default">&nbsp; &nbsp; &nbsp; GL11.glPopMatrix(); &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span></code></td></tr><tr class="amc_code_odd"><td><code><span class="amc_default">&nbsp; &nbsp; &nbsp; GL11.glFlush();</span></code></td></tr><tr class="amc_code_even"><td><code><span class="amc_default">&nbsp; &nbsp; &nbsp; GL11.glMatrixMode(GL11.GL_MODELVIEW); &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></code></td></tr><tr class="amc_code_odd"><td><code><span class="amc_default">&nbsp; }</span></code></td></tr></tbody></table></blockquote><table><tbody> </tbody></table></div>
+        </p>
+        <div align="center">
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- static bottom -->
+<ins class="adsbygoogle"
+style="display:inline-block;width:728px;height:90px"
+data-ad-client="ca-pub-4159714136965100"
+data-ad-slot="5066849540"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+ 
+    </div>
+    
+</article>
+        </div>
+    <div id="disqus_thread"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript></div>
+<script type="text/javascript">
+    var disqus_shortname = 'dorajistyle-static';
+    var disqus_url = 'http://dorajistyle.net/IT/3D/[opengl-lwjgl]-lwjgl-이동과-회전-그리고-픽킹(lwjgl-rotation-and-picking)-2008-01-21.html';
+    var disqus_identifier = disqus_url;
+    var disqus_title = '[OPENGL,LWJGL] LWJGL 이동과 회전 그리고 픽킹(LWJGL - Rotation and Picking)';
+
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+
+    <div id="me">
+    <p>
+        <img src="http://www.gravatar.com/avatar/8791361c5e3bb3cfa949de550d87e27b?s=100" alt="JoongSeob Vito Kim" />
+      한 줄의 코드와 몇 개의 단어로 디지털과 아날로그를 오가는 여행자.<br/> 
+게으름뱅이를 위한 세상을 만드는 것이 삶의 목표이다.<br/>A vagabond who travels between digital and analog with a line of code and a few words.<br/> The goal of life is creating the milieu of lazybones.</p>
+    <p>
+       &#8226; <a href="https://github.com/dorajistyle" target="_blank" title="dorajistyle's GitHub"><i class="ion-social-github"></i>GitHub</a> &#8226; 
+        <a href="#sendEmailForm" onClick="showEmailForm();"><i class="ion-email"></i>Email Me</a>
+    </p>
+</div>
+<div class="ss-form"><form class="pure-form pure-form-stacked" onsubmit="return validateForm();" target="_private_message" action="" method="POST" id="sendEmailForm" hidden>
+<fieldset>
+<div class="pure-control-group"><div class="errorbox-good">
+<div class="ss-item ss-item-required ss-text"><div class="ss-form-entry"><label for="entry_0" class="ss-q-title">보내는 분 성함 <span class="red">*</span></label><input name="entry.270478495" value="" class="ss-q-short pure-input-1-2" id="entry_270478495" type="text" placeholder="Name" aria-required="true" required=""></div></div></div></div>
+<br>
+<div class="pure-control-group"><div class="errorbox-good">
+<div class="ss-item ss-item-required ss-text"><div class="ss-form-entry"> <label class="ss-q-title" for="entry_1">이메일 주소 <span class="red">*</span></label><input name="entry.2021847284" value="" class="ss-q-short pure-input-1-2" id="entry_2021847284" aria-required="true" required="" pattern=".*^[a-zA-Z0-9.!#$%&amp;amp;&#39;*+\-\/=?\^_`{|}~\-]+@[a-zA-Z0-9\-]+(?:\.[a-zA-Z0-9\-]+)*$.*" type="text" placeholder="email@address"></div></div></div></div><br>
+<div class="pure-control-group"><div class="errorbox-good">
+<div class="ss-item ss-item-required ss-paragraph-text"><div class="ss-form-entry"><label class="ss-q-title" for="entry_2">전하실 말씀 <span class="red">*</span></label><textarea name="entry.2125433964" rows="8" cols="75" class="pure-input-1-2 ss-q-long" id="entry_2125433964" placeholder="Have a nice day!!" aria-required="true" required=""></textarea></div></div></div></div><br>
+<div class="pure-controls"><div class="errorbox-good">
+<div class="ss-item"><div class="ss-form-entry"><label for="group_1798525724_1" class="ss-q-title pure-checkbox"><input type="checkbox" name="entry.1798525724" value="&#45348; (Yes)" id="group_1798525724_1" aria-required="true" role="checkbox"> 이메일을 보내시겠습니까?(Are you sure to send an email?)</label>
+</div></div></div></div>
+<br/>
+<div class="pure-controls">
+<input type="hidden" name="draftResponse" value="[,,&quot;7697741025179685837&quot;]
+">
+<input type="hidden" name="pageHistory" value="0">
+<input type="hidden" name="fbzx" value="7697741025179685837">
+<div class="ss-item ss-navigate"><div class="ss-form-entry" hidden>
+<input type="submit" name="submit" id="ss-submit" class="pure-button pure-button-primary" value="메일 보내기"> 
+</div>
+<a class="pure-button submit" href="#" onclick="submitForm();">
+    <i class="ion-paper-airplane"></i>
+    메일 보내기
+</a>
+</div></div></fieldset></form></div>
+ 
+
+    </div>
+
+<footer>
+		
+	</footer>
+
+	
+
+</div>
+
+
+	<div class="pure-u-1">
+        <footer class="footer">
+			&copy;  2014 JoongSeob Vito Kim
+        </footer>
+	</div>
+</div>
+
+	<!-- Scripts -->
+	<script defer="defer"  src="/scripts/main.js"></script>
+</body>
+</html>

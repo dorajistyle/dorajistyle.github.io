@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<!-- Meta -->
+	<meta charset="utf-8" />
+
+	<!-- Mobile viewport optimized: h5bp.com/viewport -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+
+	<!-- Use the .htaccess and remove these lines to avoid edge case issues.
+	   More info: h5bp.com/i/378 -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+	<!-- Our site title and description -->
+	<title>WAMP서버에 Perl, CGI 연동하기 | 월풍도원(月風道院) STATIC Version - Delight on the Simple Life</title>
+	<meta name="description" content="방랑자의 이야기 STATIC 버전.(STATIC version of stories about vagabond.)" />
+	<meta name="keywords" content="여행, 명상, 철학, 방랑, 행복, 인생, IT, vagabond, travel, trip, meditation, philosophy, happiness, life" />
+	<meta name="author" content="JOONGSEOB VITO KIM" />
+
+<meta property="og:title" content="WAMP서버에 Perl, CGI 연동하기 | 월풍도원(月風道院) STATIC Version - Delight on the Simple Life">
+<meta property="og:description" content="방랑자의 이야기 STATIC 버전.(STATIC version of stories about vagabond.)">
+<meta property="og:type" content="article">
+<meta property="og:url" content="http://dorajistyle.net">
+<meta property="og:site_name" content="월풍도원(月風道院) STATIC Version - Delight on the Simple Life">
+<meta name="twitter:card" content="방랑자의 이야기 STATIC 버전.(STATIC version of stories about vagabond.)">
+<meta name="twitter:url" content="http://dorajistyle.net">
+<meta name="twitter:title" content="WAMP서버에 Perl, CGI 연동하기 | 월풍도원(月風道院) STATIC Version - Delight on the Simple Life">
+<meta name="twitter:description" content="방랑자의 이야기 STATIC 버전.(STATIC version of stories about vagabond.)">
+<meta itemprop="name" content="WAMP서버에 Perl, CGI 연동하기 | 월풍도원(月風道院) STATIC Version - Delight on the Simple Life">
+<meta itemprop="description" content="방랑자의 이야기 STATIC 버전.(STATIC version of stories about vagabond.)">
+
+	<!-- Output DocPad produced meta elements -->
+	<meta name="generator" content="DocPad v6.69.0" />
+
+	<!-- Icons -->
+    <link rel="shortcut icon" href="icons/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="icons/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="icons/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="icons/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="icons/apple-touch-icon-57-precomposed.png">
+
+	<!-- Shims: IE6-8 support of HTML5 elements -->
+	<!--[if lt IE 9]>
+		<script async src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+
+	<!-- Styles -->
+	<link  rel="stylesheet" href="http://yui.yahooapis.com/pure/0.3.0/pure-min.css" /><link  rel="stylesheet" href="http://code.ionicframework.com/ionicons/1.5.2/css/ionicons.min.css" /><link  rel="stylesheet" href="/styles/style.css" />
+	
+</head>
+<body>
+
+<!-- Markup -->
+<div class="pure-g-r" id="layout">
+	
+	<div class="sidebar pure-u">
+<header class="header">
+<hgroup>
+      <a href="/"><img class="logo" src="/images/logo.jpg" /></a>
+        <h3 class="brand-title">IT 이야기</h3>
+        <h4 class="brand-tagline">소프트웨어 개발과 IT전반에 걸친 이야기.</h4>
+</hgroup>
+		<nav id="nav-horizontal-menu" class="nav">
+
+			<ul id="std-menu-items" class="nav-list">
+	        		<li class="nav-item"><a href="/" class="pure-button"><i class="ion-ios7-home"></i></a></li>
+                                
+				
+					<li typeof="sioc:Page" about="/IT/3D.html" class="nav-item ">
+						<a class="pure-button" href="/IT/3D.html" property="dc:title">3D</a>
+					</li>
+				
+					<li typeof="sioc:Page" about="/IT/index.html" class="nav-item ">
+						<a class="pure-button" href="/IT/index.html" property="dc:title">IT</a>
+					</li>
+				
+					<li typeof="sioc:Page" about="/IT/OS.html" class="nav-item ">
+						<a class="pure-button" href="/IT/OS.html" property="dc:title">OS</a>
+					</li>
+				
+					<li typeof="sioc:Page" about="/IT/app.html" class="nav-item ">
+						<a class="pure-button" href="/IT/app.html" property="dc:title">app</a>
+					</li>
+				
+					<li typeof="sioc:Page" about="/IT/blog.html" class="nav-item ">
+						<a class="pure-button" href="/IT/blog.html" property="dc:title">blog</a>
+					</li>
+				
+					<li typeof="sioc:Page" about="/IT/db.html" class="nav-item ">
+						<a class="pure-button" href="/IT/db.html" property="dc:title">db</a>
+					</li>
+				
+					<li typeof="sioc:Page" about="/IT/development.html" class="nav-item ">
+						<a class="pure-button" href="/IT/development.html" property="dc:title">development</a>
+					</li>
+				
+					<li typeof="sioc:Page" about="/IT/etc.html" class="nav-item ">
+						<a class="pure-button" href="/IT/etc.html" property="dc:title">etc</a>
+					</li>
+				
+					<li typeof="sioc:Page" about="/IT/mobile.html" class="nav-item ">
+						<a class="pure-button" href="/IT/mobile.html" property="dc:title">mobile</a>
+					</li>
+				
+					<li typeof="sioc:Page" about="/IT/sccm.html" class="nav-item ">
+						<a class="pure-button" href="/IT/sccm.html" property="dc:title">sccm</a>
+					</li>
+				
+					<li typeof="sioc:Page" about="/IT/testing.html" class="nav-item ">
+						<a class="pure-button" href="/IT/testing.html" property="dc:title">testing</a>
+					</li>
+				
+					<li typeof="sioc:Page" about="/IT/tip.html" class="nav-item ">
+						<a class="pure-button" href="/IT/tip.html" property="dc:title">tip</a>
+					</li>
+				
+					<li typeof="sioc:Page" about="/IT/web.html" class="nav-item ">
+						<a class="pure-button" href="/IT/web.html" property="dc:title">web</a>
+					</li>
+				
+					<li typeof="sioc:Page" about="/IT/이론.html" class="nav-item ">
+						<a class="pure-button" href="/IT/이론.html" property="dc:title">이론</a>
+					</li>
+				
+					<li typeof="sioc:Page" about="/IT/환경.html" class="nav-item ">
+						<a class="pure-button" href="/IT/환경.html" property="dc:title">환경</a>
+					</li>
+				
+                           
+			</ul>
+		</nav>
+                </header>
+</div>
+
+
+
+<div class="pure-u-1">
+    <div class="content">
+    <div class="posts">
+<article id="post" class="post">
+    <header class="post-header">
+    
+    <h1 class="post-title">WAMP서버에 Perl, CGI 연동하기</h1>
+    
+    </header>
+    <div class="post-content">
+        <div align="center">
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- static_blog_top -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:336px;height:280px"
+     data-ad-client="ca-pub-4159714136965100"
+     data-ad-slot="8471411541"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+ 
+        <p>
+        <div id="hreview-summary" class="hreview"><h2 id="article_summary" class="summary">WAMP서버에 Perl과 CGI를 연동하는 방법입니다.</h2><div class="item"><span class="fn">WAMP서버에 Perl, CGI 연동하기</span></div><p><span class="description"><a title="Ruby, Python and Perl in TextMate By kteague" rel="bookmark" href="http://www.flickr.com/photos/kteague/253859670/" target="_blank"><img class="photo" src="http://farm1.static.flickr.com/117/253859670_95c92d1a1b_z.jpg?zz=1" alt="텍스트 메이트-'WAMP서버에 Perl, CGI 연동하기'" width="640" height="342" /></a></span></p><p>우선 <strong><a title="Active Perl" href="http://www.activestate.com/activeperl" target="_blank">Active Perl</a></strong>을 다운받아 설치합니다.</p><p>아파치 서버의 <strong><span style="color: #0000ff;">httpd.conf</span></strong>의<strong> Directory</strong>안에 있는 <strong>Options</strong>에<br /><strong>&nbsp;Includes ExecCGI</strong>를 추가해 줍니다.</p><p><strong>DirectoryIndex</strong>에 <strong>index.cgi index.pl</strong>를 추가해 줍니다.</p><p>cgi-bin 경로가 Default가 아니라면, 알맞은 경로로 변경해 줍니다.</p><p><strong>ScriptAlias /cgi-bin/ "/cgi-bin"</strong><br /><strong>&lt;Directory "/cgi-bin"&gt;</strong></p><p>다음을 추가해 주면 <span style="color: #0000ff;"><strong>httpd.conf</strong></span> 설정이 완료 됩니다.<br /><strong>AddHandler cgi-script .cgi </strong><br /><strong>AddHandler cgi-script .pl</strong></p><p>펄 개발을 할 때, 스크립트 파일인 /cgi-bin/filename.pl 파일의 가장 위에<br /><strong>#!c:/Perl/bin/perl.exe</strong> (펄 경로) 를 추가해줍니다.</p><p>만약 경로를 알맞게 써주었는데도 제대로 작동하지 않으면,<br /><strong><span style="color: #0000ff;">httpd.conf</span></strong> 파일에 <strong>ScriptInterpreterSource registry</strong> 를 한 줄 추가해 줍니다.</p><p>이제 MySQL 인터페이스를 설치할 차례입니다.</p><p><strong>cmd</strong>를 실행하고, 펄이 설치된 폴더로 가세요.</p><p>c:\perl\bin\&gt; <strong>ppm repo add uwinnipeg</strong></p><p>위 명령어로 저장소를 추가해 줍니다.</p><p>c:\perl\bin\&gt; <strong>ppm install DBD-mysql</strong></p><p>마지막으로 DBD-mysql을 인스톨 하면 완료!</p><p>액티브펄 설치시에 폴더를 임의로 변경했다면,<br />DBD가 엉뚱한 폴더에 인스톨 될 수 있습니다.<br />저는 64비트 OS용을 깔았더니, c:\Perl64에 설치되더라고요.<br />하지만 인스톨된 DBD-mysql을 설치된 펄 폴더로 옮겨주면 이상 없이 잘 동작합니다.<br />펄 개발 환경을 구축하실 분이 계실지 모르겠지만,<br />혹시 계시다면 이 글이 도움이 되면 좋겠네요.:D</p><p><strong>참고 자료</strong></p><p><span style="font-size: large;"><a title="Setting Up Perl and CGI For Wamp Server WAMP(P)" rel="bookmark" href="http://www.chromicdesign.com/2009/05/setting-up-perl-for-wampp.html" target="_blank">Setting Up Perl and CGI For Wamp Server WAMP(P)</a></span></p><p>by <span class="reviewer vcard"><a class="url fn" title="월풍도원(月風道院) 소개" href="http://www.dorajistyle.pe.kr/p/%EB%B8%94%EB%A1%9C%EA%B7%B8%EC%86%8C%EA%B0%9C-%EC%9B%94%ED%92%8D%EB%8F%84%EC%9B%90%E6%9C%88%E9%A2%A8%E9%81%93%E9%99%A2-delight-on-simple-life.html" target="_blank">月風</a></span></div></p>
+        </p>
+        <div align="center">
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- static bottom -->
+<ins class="adsbygoogle"
+style="display:inline-block;width:728px;height:90px"
+data-ad-client="ca-pub-4159714136965100"
+data-ad-slot="5066849540"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+ 
+    </div>
+    
+</article>
+        </div>
+    <div id="disqus_thread"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript></div>
+<script type="text/javascript">
+    var disqus_shortname = 'dorajistyle-static';
+    var disqus_url = 'http://dorajistyle.net/IT/환경/wamp서버에-perl-cgi-연동하기-2011-10-19.html';
+    var disqus_identifier = disqus_url;
+    var disqus_title = 'WAMP서버에 Perl, CGI 연동하기';
+
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+
+    <div id="me">
+    <p>
+        <img src="http://www.gravatar.com/avatar/8791361c5e3bb3cfa949de550d87e27b?s=100" alt="JoongSeob Vito Kim" />
+      한 줄의 코드와 몇 개의 단어로 디지털과 아날로그를 오가는 여행자.<br/> 
+게으름뱅이를 위한 세상을 만드는 것이 삶의 목표이다.<br/>A vagabond who travels between digital and analog with a line of code and a few words.<br/> The goal of life is creating the milieu of lazybones.</p>
+    <p>
+       &#8226; <a href="https://github.com/dorajistyle" target="_blank" title="dorajistyle's GitHub"><i class="ion-social-github"></i>GitHub</a> &#8226; 
+        <a href="#sendEmailForm" onClick="showEmailForm();"><i class="ion-email"></i>Email Me</a>
+    </p>
+</div>
+<div class="ss-form"><form class="pure-form pure-form-stacked" onsubmit="return validateForm();" target="_private_message" action="" method="POST" id="sendEmailForm" hidden>
+<fieldset>
+<div class="pure-control-group"><div class="errorbox-good">
+<div class="ss-item ss-item-required ss-text"><div class="ss-form-entry"><label for="entry_0" class="ss-q-title">보내는 분 성함 <span class="red">*</span></label><input name="entry.270478495" value="" class="ss-q-short pure-input-1-2" id="entry_270478495" type="text" placeholder="Name" aria-required="true" required=""></div></div></div></div>
+<br>
+<div class="pure-control-group"><div class="errorbox-good">
+<div class="ss-item ss-item-required ss-text"><div class="ss-form-entry"> <label class="ss-q-title" for="entry_1">이메일 주소 <span class="red">*</span></label><input name="entry.2021847284" value="" class="ss-q-short pure-input-1-2" id="entry_2021847284" aria-required="true" required="" pattern=".*^[a-zA-Z0-9.!#$%&amp;amp;&#39;*+\-\/=?\^_`{|}~\-]+@[a-zA-Z0-9\-]+(?:\.[a-zA-Z0-9\-]+)*$.*" type="text" placeholder="email@address"></div></div></div></div><br>
+<div class="pure-control-group"><div class="errorbox-good">
+<div class="ss-item ss-item-required ss-paragraph-text"><div class="ss-form-entry"><label class="ss-q-title" for="entry_2">전하실 말씀 <span class="red">*</span></label><textarea name="entry.2125433964" rows="8" cols="75" class="pure-input-1-2 ss-q-long" id="entry_2125433964" placeholder="Have a nice day!!" aria-required="true" required=""></textarea></div></div></div></div><br>
+<div class="pure-controls"><div class="errorbox-good">
+<div class="ss-item"><div class="ss-form-entry"><label for="group_1798525724_1" class="ss-q-title pure-checkbox"><input type="checkbox" name="entry.1798525724" value="&#45348; (Yes)" id="group_1798525724_1" aria-required="true" role="checkbox"> 이메일을 보내시겠습니까?(Are you sure to send an email?)</label>
+</div></div></div></div>
+<br/>
+<div class="pure-controls">
+<input type="hidden" name="draftResponse" value="[,,&quot;7697741025179685837&quot;]
+">
+<input type="hidden" name="pageHistory" value="0">
+<input type="hidden" name="fbzx" value="7697741025179685837">
+<div class="ss-item ss-navigate"><div class="ss-form-entry" hidden>
+<input type="submit" name="submit" id="ss-submit" class="pure-button pure-button-primary" value="메일 보내기"> 
+</div>
+<a class="pure-button submit" href="#" onclick="submitForm();">
+    <i class="ion-paper-airplane"></i>
+    메일 보내기
+</a>
+</div></div></fieldset></form></div>
+ 
+
+    </div>
+
+<footer>
+		
+	</footer>
+
+	
+
+</div>
+
+
+	<div class="pure-u-1">
+        <footer class="footer">
+			&copy;  2014 JoongSeob Vito Kim
+        </footer>
+	</div>
+</div>
+
+	<!-- Scripts -->
+	<script defer="defer"  src="/scripts/main.js"></script>
+</body>
+</html>
